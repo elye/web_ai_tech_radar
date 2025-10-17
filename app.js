@@ -8,7 +8,6 @@ class TechnologyRadar {
         this.technologies = [];
         this.filteredTechnologies = [];
         this.selectedTech = null;
-        this.adminMode = false;
         this.theme = 'light';
         this.showLabels = false;
         this.filters = {
@@ -133,11 +132,6 @@ class TechnologyRadar {
             this.toggleTheme();
         });
         
-        // Admin mode
-        document.getElementById('adminToggle').addEventListener('click', () => {
-            this.toggleAdminMode();
-        });
-        
         // Help button
         document.getElementById('helpButton').addEventListener('click', () => {
             this.showHelp();
@@ -146,11 +140,6 @@ class TechnologyRadar {
         // Panel close
         document.getElementById('closePanel').addEventListener('click', () => {
             this.closePanel();
-        });
-        
-        // FAB - Add new technology
-        document.getElementById('fabAdd').addEventListener('click', () => {
-            this.showAddTechnologyModal();
         });
         
         // Modal close
@@ -162,38 +151,6 @@ class TechnologyRadar {
             btn.addEventListener('click', () => {
                 document.getElementById('helpModal').classList.remove('active');
             });
-        });
-        
-        // Form handlers
-        document.getElementById('techForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            this.saveTechnology();
-        });
-        
-        document.getElementById('cancelForm').addEventListener('click', () => {
-            this.closeModal();
-        });
-        
-        // Edit/Delete buttons
-        document.getElementById('editButton').addEventListener('click', () => {
-            this.editTechnology(this.selectedTech);
-        });
-        
-        document.getElementById('deleteButton').addEventListener('click', () => {
-            this.deleteTechnology(this.selectedTech);
-        });
-        
-        // Export/Import
-        document.getElementById('exportData').addEventListener('click', () => {
-            this.exportData();
-        });
-        
-        document.getElementById('importData').addEventListener('click', () => {
-            document.getElementById('fileInput').click();
-        });
-        
-        document.getElementById('fileInput').addEventListener('change', (e) => {
-            this.importData(e.target.files);
         });
         
         // Click outside modal to close
@@ -233,19 +190,9 @@ class TechnologyRadar {
                     this.closeModal();
                     document.getElementById('helpModal').classList.remove('active');
                     break;
-                case 'a':
-                case 'A':
-                    this.toggleAdminMode();
-                    break;
                 case 't':
                 case 'T':
                     this.toggleTheme();
-                    break;
-                case 'n':
-                case 'N':
-                    if (this.adminMode) {
-                        this.showAddTechnologyModal();
-                    }
                     break;
             }
         });
@@ -563,125 +510,12 @@ class TechnologyRadar {
         
         content.innerHTML = metadata + tech.content;
         
-        // Show/hide action buttons based on admin mode
-        if (this.adminMode) {
-            actions.style.display = 'flex';
-        } else {
-            actions.style.display = 'none';
-        }
-        
         panel.classList.remove('collapsed');
     }
     
     closePanel() {
         document.getElementById('sidePanel').classList.add('collapsed');
         this.selectedTech = null;
-    }
-    
-    showTooltip(event, tech) {
-        const tooltip = document.createElement('div');
-        tooltip.className = 'tooltip';
-        tooltip.textContent = tech.name;
-        tooltip.style.left = event.pageX + 10 + 'px';
-        tooltip.style.top = event.pageY + 10 + 'px';
-        tooltip.id = 'blip-tooltip';
-        document.body.appendChild(tooltip);
-    }
-    
-    hideTooltip() {
-        const tooltip = document.getElementById('blip-tooltip');
-        if (tooltip) {
-            tooltip.remove();
-        }
-    }
-    
-    showAddTechnologyModal() {
-        document.getElementById('modalTitle').textContent = 'Add Technology';
-        document.getElementById('techForm').reset();
-        document.getElementById('modal').classList.add('active');
-        
-        // Pre-fill with template
-        const template = MarkdownParser.generateTemplate();
-        const parsed = MarkdownParser.parse(template);
-        document.getElementById('techContent').value = parsed.rawContent;
-    }
-    
-    editTechnology(tech) {
-        if (!tech) return;
-        
-        document.getElementById('modalTitle').textContent = 'Edit Technology';
-        document.getElementById('techName').value = tech.name;
-        document.getElementById('techQuadrant').value = tech.quadrant;
-        document.getElementById('techRing').value = tech.ring;
-        document.getElementById('techTags').value = tech.tags.join(', ');
-        document.getElementById('techFeatured').checked = tech.featured;
-        document.getElementById('techContent').value = tech.rawContent || '';
-        
-        document.getElementById('modal').classList.add('active');
-    }
-    
-    saveTechnology() {
-        const name = document.getElementById('techName').value.trim();
-        const quadrant = document.getElementById('techQuadrant').value;
-        const ring = document.getElementById('techRing').value;
-        const tags = document.getElementById('techTags').value.split(',').map(t => t.trim()).filter(t => t);
-        const featured = document.getElementById('techFeatured').checked;
-        const content = document.getElementById('techContent').value;
-        
-        if (!name) {
-            alert('Please enter a technology name');
-            return;
-        }
-        
-        const tech = {
-            name,
-            quadrant,
-            ring,
-            tags,
-            featured,
-            rawContent: content,
-            date: new Date().toISOString().split('T')[0]
-        };
-        
-        // Parse the content to get HTML
-        const fullMarkdown = MarkdownParser.serialize(tech);
-        const parsed = MarkdownParser.parse(fullMarkdown);
-        
-        // Check if editing existing or adding new
-        const existingIndex = this.technologies.findIndex(t => t.name === this.selectedTech?.name);
-        
-        if (existingIndex >= 0) {
-            // Update existing
-            this.technologies[existingIndex] = parsed;
-        } else {
-            // Add new
-            this.technologies.push(parsed);
-        }
-        
-        this.applyFilters();
-        this.closeModal();
-        this.updateStats();
-        
-        // Show success message
-        this.showNotification('Technology saved successfully!');
-    }
-    
-    deleteTechnology(tech) {
-        if (!tech) return;
-        
-        if (!confirm(`Are you sure you want to delete "${tech.name}"?`)) {
-            return;
-        }
-        
-        const index = this.technologies.findIndex(t => t.name === tech.name);
-        if (index >= 0) {
-            this.technologies.splice(index, 1);
-            this.applyFilters();
-            this.closePanel();
-            this.updateStats();
-            
-            this.showNotification('Technology deleted successfully!');
-        }
     }
     
     closeModal() {
@@ -702,25 +536,6 @@ class TechnologyRadar {
             this.theme = saved;
             document.documentElement.setAttribute('data-theme', this.theme);
             document.getElementById('themeToggle').textContent = this.theme === 'light' ? '🌙' : '☀️';
-        }
-    }
-    
-    toggleAdminMode() {
-        this.adminMode = !this.adminMode;
-        const fab = document.getElementById('fabAdd');
-        const adminBtn = document.getElementById('adminToggle');
-        
-        if (this.adminMode) {
-            fab.style.display = 'block';
-            adminBtn.style.background = 'var(--ring-trial)';
-            adminBtn.style.color = 'white';
-            this.showNotification('Admin mode enabled');
-        } else {
-            fab.style.display = 'none';
-            adminBtn.style.background = '';
-            adminBtn.style.color = '';
-            this.closePanel();
-            this.showNotification('Admin mode disabled');
         }
     }
     
@@ -776,64 +591,6 @@ class TechnologyRadar {
             notification.style.transition = 'opacity 0.3s';
             setTimeout(() => notification.remove(), 300);
         }, 3000);
-    }
-    
-    exportData() {
-        const dataStr = JSON.stringify({
-            technologies: this.technologies,
-            exportDate: new Date().toISOString(),
-            version: '1.0'
-        }, null, 2);
-        
-        const blob = new Blob([dataStr], { type: 'application/json' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = `ai-tech-radar-${Date.now()}.json`;
-        a.click();
-        URL.revokeObjectURL(url);
-        
-        this.showNotification('Data exported successfully!');
-    }
-    
-    async importData(files) {
-        if (!files || files.length === 0) return;
-        
-        for (const file of files) {
-            try {
-                const content = await this.readFileContent(file);
-                
-                if (file.name.endsWith('.json')) {
-                    const data = JSON.parse(content);
-                    if (data.technologies) {
-                        this.technologies = data.technologies;
-                        this.applyFilters();
-                        this.updateStats();
-                        this.showNotification('Data imported successfully!');
-                    }
-                } else if (file.name.endsWith('.md')) {
-                    const tech = MarkdownParser.parse(content);
-                    if (!tech.draft) {
-                        this.technologies.push(tech);
-                    }
-                }
-            } catch (error) {
-                console.error('Error importing file:', error);
-                alert(`Error importing ${file.name}: ${error.message}`);
-            }
-        }
-        
-        this.applyFilters();
-        this.updateStats();
-    }
-    
-    readFileContent(file) {
-        return new Promise((resolve, reject) => {
-            const reader = new FileReader();
-            reader.onload = (e) => resolve(e.target.result);
-            reader.onerror = reject;
-            reader.readAsText(file);
-        });
     }
 }
 

@@ -127,10 +127,6 @@
                 🌙
             </button>
             
-            <button id="adminToggle" class="btn-icon" title="Toggle admin mode">
-                ⚙️
-            </button>
-            
             <button id="helpButton" class="btn-icon" title="Keyboard shortcuts (?)">
                 ❓
             </button>
@@ -176,97 +172,7 @@
             <div id="panelContent" class="panel-content">
                 <p class="panel-placeholder">Click on a technology blip to see details</p>
             </div>
-            <div id="panelActions" class="panel-actions" style="display: none;">
-                <button id="editButton" class="btn-secondary">Edit</button>
-                <button id="deleteButton" class="btn-danger">Delete</button>
-            </div>
         </aside>
-    </div>
-    
-    <!-- Floating Action Button -->
-    <button id="fabAdd" class="fab" title="Add new technology" style="display: none;">
-        ➕
-    </button>
-    
-    <!-- Activity Feed -->
-    <div id="activityFeed" class="activity-feed" style="display: none;">
-        <h3>Recent Updates</h3>
-        <div id="activityList"></div>
-    </div>
-    
-    <!-- Modal for Add/Edit -->
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 id="modalTitle">Add Technology</h2>
-                <button id="closeModal" class="btn-icon">✕</button>
-            </div>
-            <div class="modal-body">
-                <form id="techForm">
-                    <div class="form-group">
-                        <label for="techName">Name *</label>
-                        <input type="text" id="techName" required />
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="techQuadrant">Quadrant *</label>
-                            <select id="techQuadrant" required>
-                                <option value="models">Models</option>
-                                <option value="techniques">Techniques</option>
-                                <option value="tools">Tools</option>
-                                <option value="platforms">Platforms</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="techRing">Ring *</label>
-                            <select id="techRing" required>
-                                <option value="adopt">Adopt</option>
-                                <option value="trial">Trial</option>
-                                <option value="assess">Assess</option>
-                                <option value="hold">Hold</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="techTags">Tags (comma-separated)</label>
-                        <input type="text" id="techTags" placeholder="llm, retrieval, generation" />
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>
-                            <input type="checkbox" id="techFeatured" />
-                            Featured Technology
-                        </label>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="techContent">Content (Markdown)</label>
-                        <textarea id="techContent" rows="15" placeholder="# Technology Name
-
-## Overview
-Brief description...
-
-## Key Benefits
-- Benefit 1
-- Benefit 2
-
-## When to Use
-...
-
-## Considerations
-..."></textarea>
-                    </div>
-                    
-                    <div class="form-actions">
-                        <button type="button" id="cancelForm" class="btn-secondary">Cancel</button>
-                        <button type="submit" class="btn-primary">Save</button>
-                    </div>
-                </form>
-            </div>
-        </div>
     </div>
     
     <!-- Help Modal -->
@@ -291,20 +197,17 @@ Brief description...
                         <span>Close panel/modal</span>
                     </div>
                     <div class="shortcut-item">
-                        <kbd>A</kbd>
-                        <span>Toggle admin mode</span>
-                    </div>
-                    <div class="shortcut-item">
                         <kbd>T</kbd>
                         <span>Toggle theme</span>
-                    </div>
-                    <div class="shortcut-item">
-                        <kbd>N</kbd>
-                        <span>New technology (admin mode)</span>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    
+    <!-- Dummy modal for compatibility -->
+    <div id="modal" class="modal" style="display: none;">
+        <button id="closeModal" style="display: none;"></button>
     </div>
     
     <!-- Footer -->
@@ -313,14 +216,8 @@ Brief description...
             <span id="lastUpdated">Last updated: Loading...</span>
             <span>|</span>
             <span id="techCount">0 technologies</span>
-            <span>|</span>
-            <button id="exportData" class="btn-link">Export Data</button>
-            <span>|</span>
-            <button id="importData" class="btn-link">Import Data</button>
         </div>
     </footer>
-    
-    <input type="file" id="fileInput" style="display: none;" accept=".md,.zip" multiple />
     
     <!-- External Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>

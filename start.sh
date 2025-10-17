@@ -10,6 +10,19 @@ echo ""
 if command -v python3 &> /dev/null; then
     echo "✓ Python 3 found"
     echo ""
+    
+    # Regenerate sample-data.js from markdown files
+    echo "📝 Regenerating sample-data.js from markdown files..."
+    python3 generate-sample-data.py
+    
+    if [ $? -eq 0 ]; then
+        echo "✓ Sample data regenerated successfully"
+    else
+        echo "⚠️  Warning: Failed to regenerate sample-data.js"
+        echo "   The app will use existing data"
+    fi
+    
+    echo ""
     echo "🚀 Starting server on http://localhost:8000"
     echo ""
     echo "Press Ctrl+C to stop the server"
@@ -22,6 +35,19 @@ if command -v python3 &> /dev/null; then
 # Fallback to Python 2
 elif command -v python &> /dev/null; then
     echo "✓ Python 2 found"
+    echo ""
+    
+    # Regenerate sample-data.js from markdown files
+    echo "📝 Regenerating sample-data.js from markdown files..."
+    python generate-sample-data.py
+    
+    if [ $? -eq 0 ]; then
+        echo "✓ Sample data regenerated successfully"
+    else
+        echo "⚠️  Warning: Failed to regenerate sample-data.js"
+        echo "   The app will use existing data"
+    fi
+    
     echo ""
     echo "🚀 Starting server on http://localhost:8000"
     echo ""

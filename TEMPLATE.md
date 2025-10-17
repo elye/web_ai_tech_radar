@@ -60,17 +60,17 @@ List complementary tools, libraries, or frameworks that work well with this tech
 ## Instructions for Using This Template
 
 1. **Copy this file** to the appropriate quadrant folder:
+   - `radar-data/models/` - for LLMs and AI models
    - `radar-data/techniques/` - for methodologies, practices, approaches
-   - `radar-data/tools/` - for applications, libraries, utilities
+   - `radar-data/tools/` - for development tools, frameworks, libraries
    - `radar-data/platforms/` - for cloud services, APIs, infrastructure
-   - `radar-data/languages-frameworks/` - for programming languages and frameworks
 
 2. **Rename the file** using lowercase with hyphens (e.g., `my-technology.md`)
 
 3. **Update the frontmatter** (the section between `---` markers):
    - `name`: The display name of the technology
    - `ring`: One of: `adopt`, `trial`, `assess`, or `hold`
-   - `quadrant`: One of: `techniques`, `tools`, `platforms`, or `languages-frameworks`
+   - `quadrant`: One of: `models`, `techniques`, `tools`, or `platforms`
    - `tags`: Array of relevant tags for filtering (use brackets and quotes)
    - `date`: Today's date in YYYY-MM-DD format
    - `featured`: Set to `true` to highlight on the radar, `false` otherwise
@@ -113,7 +113,7 @@ def example():
 ---
 name: "string"              # Required - Display name
 ring: "string"              # Required - adopt|trial|assess|hold
-quadrant: "string"          # Required - techniques|tools|platforms|languages-frameworks
+quadrant: "string"          # Required - models|techniques|tools|platforms
 tags: ["string", "string"]  # Optional - Array of tags
 date: "YYYY-MM-DD"         # Optional - ISO date format
 featured: boolean           # Optional - true|false

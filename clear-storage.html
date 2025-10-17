@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clear Storage</title>
+    <style>
+        body {
+            font-family: system-ui;
+            padding: 40px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        button {
+            padding: 12px 24px;
+            font-size: 16px;
+            cursor: pointer;
+            background: #ef4444;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            margin-right: 10px;
+        }
+        button:hover {
+            background: #dc2626;
+        }
+        .success {
+            background: #10b981;
+        }
+        .success:hover {
+            background: #059669;
+        }
+        #status {
+            margin-top: 20px;
+            padding: 12px;
+            border-radius: 6px;
+            display: none;
+        }
+        .info {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧹 Clear LocalStorage</h1>
+    <p>This will clear all saved data and reload fresh sample data from the new quadrant structure.</p>
+    
+    <button onclick="clearStorage()">Clear Storage & Reload</button>
+    <button class="success" onclick="goToRadar()">Go to Radar</button>
+    
+    <div id="status"></div>
+    
+    <hr style="margin: 30px 0;">
+    
+    <h2>Current Storage Info:</h2>
+    <pre id="info"></pre>
+    
+    <script>
+        function showStatus(message, type = 'info') {
+            const status = document.getElementById('status');
+            status.textContent = message;
+            status.className = type;
+            status.style.display = 'block';
+        }
+        
+        function clearStorage() {
+            localStorage.removeItem('ai-tech-radar-data');
+            localStorage.removeItem('theme');
+            showStatus('✅ Storage cleared! Redirecting to radar...', 'info');
+            setTimeout(() => {
+                window.location.href = '/';
+            }, 1500);
+        }
+        
+        function goToRadar() {
+            window.location.href = '/';
+        }
+        
+        function checkStorage() {
+            const data = localStorage.getItem('ai-tech-radar-data');
+            const info = document.getElementById('info');
+            
+            if (data) {
+                try {
+                    const parsed = JSON.parse(data);
+                    info.textContent = `Technologies: ${parsed.technologies?.length || 0}\n` +
+                                     `Last Updated: ${parsed.lastUpdated || 'N/A'}\n\n` +
+                                     `Size: ${(data.length / 1024).toFixed(2)} KB`;
+                } catch (e) {
+                    info.textContent = 'Error parsing storage data';
+                }
+            } else {
+                info.textContent = 'No data stored (will load fresh sample data)';
+            }
+        }
+        
+        checkStorage();
+    </script>
+</body>
+</html>

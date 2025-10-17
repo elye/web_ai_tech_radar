@@ -186,7 +186,7 @@ A method for training AI systems to be harmless and helpful by having them criti
         content: `---
 name: "ChatGPT / GPT-4"
 ring: "adopt"
-quadrant: "tools"
+quadrant: "models"
 tags: ["openai", "llm", "chatbot"]
 date: "2024-01-15"
 featured: true
@@ -211,9 +211,9 @@ OpenAI's flagship conversational AI with advanced natural language understanding
         content: `---
 name: "Claude"
 ring: "adopt"
-quadrant: "tools"
-tags: ["anthropic", "llm", "safety"]
-date: "2024-01-14"
+quadrant: "models"
+tags: ["anthropic", "llm", "chatbot"]
+date: "2024-01-15"
 featured: true
 ---
 
@@ -506,7 +506,7 @@ Cloud platform for running open-source machine learning models via API.
         content: `---
 name: "Python for ML"
 ring: "adopt"
-quadrant: "languages-frameworks"
+quadrant: "tools"
 tags: ["python", "ml", "data-science"]
 date: "2024-01-15"
 featured: true
@@ -531,7 +531,7 @@ Python is the de facto standard for machine learning and AI development.
         content: `---
 name: "PyTorch"
 ring: "adopt"
-quadrant: "languages-frameworks"
+quadrant: "tools"
 tags: ["deep-learning", "framework", "research"]
 date: "2024-01-14"
 featured: true
@@ -556,7 +556,7 @@ Meta's deep learning framework, dominant in AI research.
         content: `---
 name: "TensorFlow"
 ring: "trial"
-quadrant: "languages-frameworks"
+quadrant: "tools"
 tags: ["deep-learning", "google", "production"]
 date: "2024-01-12"
 featured: false
@@ -580,7 +580,7 @@ Google's comprehensive machine learning platform.
         content: `---
 name: "Rust for AI"
 ring: "assess"
-quadrant: "languages-frameworks"
+quadrant: "tools"
 tags: ["rust", "performance", "safety"]
 date: "2024-01-10"
 featured: false
@@ -604,7 +604,7 @@ Rust is emerging for AI infrastructure and performance-critical ML components.
         content: `---
 name: "JAX"
 ring: "trial"
-quadrant: "languages-frameworks"
+quadrant: "tools"
 tags: ["google", "research", "performance"]
 date: "2024-01-09"
 featured: false
@@ -628,7 +628,7 @@ Google's library for high-performance numerical computing and ML research.
         content: `---
 name: "DSPy"
 ring: "assess"
-quadrant: "languages-frameworks"
+quadrant: "tools"
 tags: ["framework", "prompting", "stanford"]
 date: "2024-01-07"
 featured: false
@@ -652,7 +652,7 @@ Stanford framework for programming (not prompting) language models.
         content: `---
 name: "Semantic Kernel"
 ring: "trial"
-quadrant: "languages-frameworks"
+quadrant: "tools"
 tags: ["microsoft", "orchestration", "dotnet"]
 date: "2024-01-06"
 featured: false

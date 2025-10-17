@@ -20,7 +20,7 @@ from typing import Dict, List, Tuple
 
 # Valid values for each field
 VALID_RINGS = ['adopt', 'trial', 'assess', 'hold']
-VALID_QUADRANTS = ['techniques', 'tools', 'platforms', 'languages-frameworks']
+VALID_QUADRANTS = ['models', 'techniques', 'tools', 'platforms']
 
 class Colors:
     """ANSI color codes for terminal output"""

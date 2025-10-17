@@ -1,7 +1,7 @@
 ---
 name: "Rust for AI"
 ring: "assess"
-quadrant: "languages-frameworks"
+quadrant: "tools"
 tags: ["rust", "performance", "systems", "safety"]
 date: "2024-01-10"
 featured: false

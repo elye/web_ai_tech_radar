@@ -338,10 +338,10 @@ class TechnologyRadar {
         
         // Add quadrant labels
         const quadrantLabels = {
-            'techniques': { x: radius / 2, y: -radius / 2, label: 'TECHNIQUES' },
-            'tools': { x: -radius / 2, y: -radius / 2, label: 'TOOLS' },
-            'platforms': { x: -radius / 2, y: radius / 2, label: 'PLATFORMS' },
-            'languages-frameworks': { x: radius / 2, y: radius / 2, label: 'LANGUAGES & FRAMEWORKS' }
+            'models': { x: radius / 2, y: -radius / 2, label: 'MODELS' },
+            'techniques': { x: -radius / 2, y: -radius / 2, label: 'TECHNIQUES' },
+            'tools': { x: -radius / 2, y: radius / 2, label: 'TOOLS' },
+            'platforms': { x: radius / 2, y: radius / 2, label: 'PLATFORMS' }
         };
         
         Object.entries(quadrantLabels).forEach(([key, pos]) => {
@@ -401,10 +401,10 @@ class TechnologyRadar {
     calculateBlipPosition(tech, radius) {
         // Quadrant angles
         const quadrantAngles = {
-            'techniques': { start: 0, end: 90 },
-            'tools': { start: 90, end: 180 },
-            'platforms': { start: 180, end: 270 },
-            'languages-frameworks': { start: 270, end: 360 }
+            'models': { start: 0, end: 90 },
+            'techniques': { start: 90, end: 180 },
+            'tools': { start: 180, end: 270 },
+            'platforms': { start: 270, end: 360 }
         };
         
         // Ring radii

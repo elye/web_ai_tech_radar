@@ -1,9 +1,9 @@
 ---
-name: "Claude"
+name: "Claude (Anthropic)"
 ring: "adopt"
-quadrant: "tools"
-tags: ["anthropic", "llm", "chatbot", "safety"]
-date: "2024-01-14"
+quadrant: "models"
+tags: ["llm", "anthropic", "claude", "chatbot"]
+date: "2024-01-15"
 featured: true
 ---
 

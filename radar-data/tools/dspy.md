@@ -1,7 +1,7 @@
 ---
 name: "DSPy"
 ring: "assess"
-quadrant: "languages-frameworks"
+quadrant: "tools"
 tags: ["framework", "prompting", "optimization", "stanford"]
 date: "2024-01-07"
 featured: false

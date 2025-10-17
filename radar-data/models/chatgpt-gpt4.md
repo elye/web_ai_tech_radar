@@ -1,8 +1,8 @@
 ---
-name: "ChatGPT / GPT-4"
+name: "ChatGPT & GPT-4"
 ring: "adopt"
-quadrant: "tools"
-tags: ["openai", "llm", "chatbot", "assistant"]
+quadrant: "models"
+tags: ["llm", "openai", "chatbot", "gpt-4"]
 date: "2024-01-15"
 featured: true
 ---

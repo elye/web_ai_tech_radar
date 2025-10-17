@@ -1,7 +1,7 @@
 ---
 name: "TensorFlow"
 ring: "trial"
-quadrant: "languages-frameworks"
+quadrant: "tools"
 tags: ["deep-learning", "framework", "google", "production"]
 date: "2024-01-12"
 featured: false

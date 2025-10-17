@@ -24,7 +24,7 @@ Then open: **http://localhost:8000**
 
 ### 1. Explore the Radar (30 seconds)
 - 👆 **Click** any colored blip to see technology details
-- 🎨 Four quadrants: Techniques, Tools, Platforms, Languages
+- 🎨 Four quadrants: Models, Techniques, Tools, Platforms
 - 🎯 Four rings: Adopt (green), Trial (blue), Assess (yellow), Hold (red)
 - ⭐ Star icon = Featured technology
 
@@ -52,7 +52,7 @@ Then open: **http://localhost:8000**
 2. Click **➕** (bottom right) floating button
 3. Fill in the form:
    - **Name**: "Your Technology"
-   - **Quadrant**: Choose one (techniques/tools/platforms/languages-frameworks)
+   - **Quadrant**: Choose one (models/techniques/tools/platforms)
    - **Ring**: Choose one (adopt/trial/assess/hold)
    - **Tags**: "tag1, tag2, tag3"
    - **Featured**: Check if you want a star
@@ -100,19 +100,19 @@ Then open: **http://localhost:8000**
 ### Quadrants (WHAT type?)
 
 ```
-        TOOLS          |      TECHNIQUES
-   (Applications)      |    (Methods)
+     TECHNIQUES        |       MODELS
+    (Methods)          |   (LLMs & AI Models)
                        |
 ─────────────────────────────────────────
                        |
-    PLATFORMS          |   LANGUAGES &
-   (Cloud/APIs)        |    FRAMEWORKS
+       TOOLS           |     PLATFORMS
+  (Dev Tools)          |    (APIs & Cloud)
 ```
 
-**Tools** = Things you use (ChatGPT, GitHub Copilot)  
-**Techniques** = Ways to work (RAG, Prompt Engineering)  
-**Platforms** = Where you deploy (AWS, Azure, OpenAI API)  
-**Languages** = What you code in (Python, PyTorch)
+**Models** = LLMs and AI models (GPT-4, Claude, Llama, Gemini)  
+**Techniques** = Methods and approaches (RAG, Prompt Engineering, Fine-tuning)  
+**Tools** = Development tools (LangChain, PyTorch, GitHub Copilot)  
+**Platforms** = APIs and infrastructure (OpenAI API, AWS Bedrock, Azure)
 
 ### Rings (RECOMMENDATION level?)
 
@@ -269,10 +269,10 @@ See `DEPLOYMENT.md` for:
 💾 sample-data.js      Sample technologies
 
 📂 radar-data/         Your content here!
-  ├── techniques/      AI methods
-  ├── tools/          AI applications
-  ├── platforms/      Cloud services
-  └── languages-frameworks/ Programming
+  ├── models/         LLMs & AI models
+  ├── techniques/     AI methods
+  ├── tools/         Dev tools & frameworks
+  └── platforms/     Cloud & APIs
 
 📋 TEMPLATE.md         Copy this for new tech
 📖 README.md           Full documentation

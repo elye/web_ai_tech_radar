@@ -1,7 +1,7 @@
 ---
 name: "Semantic Kernel"
 ring: "trial"
-quadrant: "languages-frameworks"
+quadrant: "tools"
 tags: ["microsoft", "orchestration", "dotnet", "enterprise"]
 date: "2024-01-06"
 featured: false

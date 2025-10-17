@@ -60,10 +60,10 @@ ai-tech-radar/
 ├── markdown-parser.js         # Markdown parsing utilities
 ├── sample-data.js            # Embedded sample data
 ├── radar-data/               # Markdown files for technologies
-│   ├── techniques/           # AI techniques and methods
-│   ├── tools/                # Tools and applications
-│   ├── platforms/            # Cloud platforms and APIs
-│   └── languages-frameworks/ # Programming languages & frameworks
+│   ├── models/               # LLMs and AI models
+│   ├── techniques/           # AI methods and approaches
+│   ├── tools/                # Development tools and frameworks
+│   └── platforms/            # Cloud platforms and APIs
 ├── TEMPLATE.md               # Template for new technologies
 └── README.md                 # This file
 ```
@@ -83,10 +83,10 @@ The technology will be saved to browser localStorage and appear on the radar imm
 
 1. Copy the `TEMPLATE.md` file
 2. Save it in the appropriate quadrant folder with a descriptive filename:
+   - `radar-data/models/your-technology.md`
    - `radar-data/techniques/your-technology.md`
    - `radar-data/tools/your-technology.md`
    - `radar-data/platforms/your-technology.md`
-   - `radar-data/languages-frameworks/your-technology.md`
 
 3. Edit the frontmatter (the section between `---` markers):
 
@@ -94,7 +94,7 @@ The technology will be saved to browser localStorage and appear on the radar imm
 ---
 name: "Your Technology Name"
 ring: "adopt"                    # adopt, trial, assess, or hold
-quadrant: "techniques"           # techniques, tools, platforms, or languages-frameworks
+quadrant: "techniques"           # models, techniques, tools, or platforms
 tags: ["tag1", "tag2", "tag3"]   # Array of tags
 date: "2024-01-15"              # ISO date format
 featured: false                  # true for featured technologies
@@ -109,10 +109,10 @@ featured: false                  # true for featured technologies
 
 ### Quadrants (What type of technology?)
 
-- **Techniques** (Top Right) - Methods, practices, and approaches
-- **Tools** (Top Left) - Applications, libraries, and utilities
-- **Platforms** (Bottom Left) - Cloud services, APIs, and infrastructure
-- **Languages & Frameworks** (Bottom Right) - Programming languages and frameworks
+- **Models** (Top Right) - LLMs and AI models (GPT-4, Claude, Llama, Gemini)
+- **Techniques** (Top Left) - Methods, practices, and approaches (RAG, Fine-tuning, Prompt Engineering)
+- **Tools** (Bottom Left) - Development tools, frameworks, and libraries (LangChain, PyTorch, LlamaIndex)
+- **Platforms** (Bottom Right) - Cloud services, APIs, and infrastructure (OpenAI API, AWS Bedrock)
 
 ### Rings (What's our recommendation?)
 

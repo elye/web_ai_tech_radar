@@ -1,7 +1,7 @@
 ---
 name: "PyTorch"
 ring: "adopt"
-quadrant: "languages-frameworks"
+quadrant: "tools"
 tags: ["deep-learning", "framework", "research", "python"]
 date: "2024-01-14"
 featured: true

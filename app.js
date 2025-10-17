@@ -386,22 +386,48 @@ class TechnologyRadar {
             const blipGroup = g.append('g')
                 .attr('class', 'blip blip-enter')
                 .attr('transform', `translate(${position.x},${position.y})`)
+                .attr('data-x', position.x)
+                .attr('data-y', position.y)
                 .style('cursor', 'pointer')
                 .on('click', () => this.showTechnologyDetails(tech))
                 .on('mouseenter', function(event) {
                     const currentBlip = d3.select(this);
                     
-                    // Grow the blip on hover
-                    currentBlip.select('circle')
-                        .transition()
-                        .duration(200)
-                        .attr('r', 16);
+                    // Create a duplicate group at the root level for the hover effect
+                    const x = parseFloat(this.getAttribute('data-x'));
+                    const y = parseFloat(this.getAttribute('data-y'));
                     
-                    // Show hover label - positioned below the blip
-                    const hoverLabel = currentBlip.append('g')
+                    // Create hover group at parent level (will be on top)
+                    const hoverGroup = d3.select(this.parentNode)
+                        .append('g')
+                        .attr('class', 'blip-hover-clone')
+                        .attr('transform', `translate(${x},${y})`)
+                        .style('pointer-events', 'none');
+                    
+                    // Clone the circle
+                    hoverGroup.append('circle')
+                        .attr('r', 16)
+                        .attr('fill', ringColors[tech.ring])
+                        .attr('opacity', 0.8);
+                    
+                    // Clone the number
+                    hoverGroup.append('text')
+                        .attr('class', 'blip-number')
+                        .attr('dy', '0.35em')
+                        .style('pointer-events', 'none')
+                        .text(index + 1);
+                    
+                    // Hide original blip's static label if enabled
+                    currentBlip.select('.blip-label').style('opacity', 0);
+                    
+                    // Hide original blip content (but keep it for mouse events)
+                    currentBlip.select('circle').style('opacity', 0);
+                    currentBlip.select('.blip-number').style('opacity', 0);
+                    
+                    // Add hover label
+                    const hoverLabel = hoverGroup.append('g')
                         .attr('class', 'hover-label');
                     
-                    // Add text first to measure it
                     const text = hoverLabel.append('text')
                         .attr('dy', '2.8em')
                         .attr('pointer-events', 'none')
@@ -411,10 +437,8 @@ class TechnologyRadar {
                         .style('fill', '#000')
                         .text(tech.name);
                     
-                    // Get text dimensions
                     const bbox = text.node().getBBox();
                     
-                    // Add background rectangle before text
                     hoverLabel.insert('rect', 'text')
                         .attr('x', bbox.x - 6)
                         .attr('y', bbox.y - 3)
@@ -430,14 +454,15 @@ class TechnologyRadar {
                 .on('mouseleave', function(event) {
                     const currentBlip = d3.select(this);
                     
-                    // Shrink back to normal size
-                    currentBlip.select('circle')
-                        .transition()
-                        .duration(200)
-                        .attr('r', 10);
+                    // Show static label again if labels are enabled
+                    currentBlip.select('.blip-label').style('opacity', 1);
                     
-                    // Remove hover label
-                    currentBlip.select('.hover-label').remove();
+                    // Show original blip content again
+                    currentBlip.select('circle').style('opacity', 0.8);
+                    currentBlip.select('.blip-number').style('opacity', 1);
+                    
+                    // Remove the hover clone
+                    d3.select(this.parentNode).select('.blip-hover-clone').remove();
                 });
             
             // Draw blip circle

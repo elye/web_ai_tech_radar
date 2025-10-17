@@ -3,12 +3,207 @@
  * Auto-generated from radar-data/ markdown files
  */
 
-// Version to detect when sample data changes
-const SAMPLE_DATA_VERSION = "2024-10-17-v4"; // Update this when regenerating
-
 const SAMPLE_DATA = [
     {
+        name: "chatgpt-gpt4.md",
+        content: `---
+name: "GPT-4o"
+ring: "adopt"
+quadrant: "models"
+tags: ["openai", "llm", "multimodal", "gpt-4"]
+date: "2024-10-17"
+featured: true
+---
+
+# GPT-4o
+
+## Overview
+OpenAI's flagship multimodal model with enhanced speed, vision capabilities, and audio understanding. GPT-4o ("o" for "omni") represents a significant leap in real-time processing and cost efficiency compared to GPT-4 Turbo.
+
+## Key Benefits
+- Native multimodal understanding (text, vision, audio)
+- 2x faster than GPT-4 Turbo with 50% cost reduction
+- 128K context window for extensive document analysis
+- Superior performance on coding, math, and reasoning tasks
+- Real-time voice conversation capabilities
+
+## When to Use
+- Production applications requiring high-quality LLM capabilities
+- Multimodal applications processing images, audio, and text
+- Cost-sensitive deployments needing GPT-4 level quality
+- Real-time conversational AI applications
+- Complex reasoning and analysis tasks
+
+## Considerations
+- Requires OpenAI API access (paid service)
+- Rate limits apply based on tier
+- Output quality may vary for niche domains
+- Vision capabilities have some limitations
+- Consider fine-tuning for specialized tasks
+
+## Recommended Tools
+- LangChain for application development
+- OpenAI Python/Node SDKs for direct integration
+- LlamaIndex for RAG implementations
+- Cursor/GitHub Copilot for code assistance
+
+## Resources
+- [OpenAI GPT-4o Documentation](https://platform.openai.com/docs/models/gpt-4o)
+- [GPT-4o System Card](https://openai.com/research/gpt-4o-system-card)
+- [OpenAI Cookbook](https://cookbook.openai.com/)
+- [API Reference](https://platform.openai.com/docs/api-reference)
+
+## Status
+**Ring: ADOPT** - Production-ready, industry-leading performance, recommended for most LLM applications requiring high quality and multimodal capabilities.
+
+## Last Updated
+2024-10-17
+
+# ChatGPT / GPT-4
+
+## Overview
+OpenAI's flagship conversational AI, built on the GPT-4 architecture, offering advanced natural language understanding and generation capabilities.
+
+## Key Benefits
+- State-of-the-art language understanding
+- Multi-modal capabilities (GPT-4V)
+- Large context window (128k tokens)
+- Extensive API ecosystem
+- Custom GPTs and assistants
+
+## When to Use
+- General-purpose AI assistance
+- Content creation and editing
+- Code generation and debugging
+- Research and analysis
+- Customer support automation
+
+## Considerations
+- API costs can accumulate
+- Rate limits on API
+- Data privacy concerns
+- Requires internet connectivity
+- Occasional hallucinations
+
+## Recommended Tools
+- ChatGPT Plus subscription
+- OpenAI API
+- Custom GPTs
+- Function calling capabilities
+
+## Resources
+- [ChatGPT](https://chat.openai.com)
+- [OpenAI API Documentation](https://platform.openai.com/docs)
+- [GPT-4 Technical Report](https://arxiv.org/abs/2303.08774)
+
+## Status
+**Ring: ADOPT** - Industry-leading, production-ready for most use cases
+
+## Last Updated
+2024-01-15
+`
+    },
+    {
         name: "claude-3-5-sonnet.md",
+        content: `---
+name: "Claude 3.5 Sonnet"
+ring: "adopt"
+quadrant: "models"
+tags: ["anthropic", "llm", "claude", "reasoning"]
+date: "2024-10-17"
+featured: true
+---
+
+# Claude 3.5 Sonnet
+
+## Overview
+Anthropic's most capable model combining intelligence, speed, and cost-effectiveness. Claude 3.5 Sonnet excels at coding, reasoning, and following complex instructions with enhanced agentic capabilities.
+
+## Key Benefits
+- Superior coding ability compared to GPT-4o and competitors
+- Excellent at following complex, multi-step instructions
+- Strong reasoning and analysis capabilities
+- 200K context window (largest in production)
+- Enhanced agentic workflow support
+- Constitutional AI for safer outputs
+
+## When to Use
+- Complex coding tasks and software development
+- Long-context document analysis (up to 200K tokens)
+- Applications requiring nuanced reasoning
+- Agentic workflows and tool use
+- Safety-critical applications needing aligned AI
+- Customer support requiring empathetic responses
+
+## Considerations
+- Requires Anthropic API access
+- More conservative outputs than some competitors
+- Rate limits based on tier
+- Newer model family, evolving best practices
+- May be more expensive for high-volume use
+
+## Recommended Tools
+- Claude Code (VS Code extension)
+- Anthropic API SDKs (Python, TypeScript)
+- LangChain for orchestration
+- Cursor IDE for code assistance
+
+## Resources
+- [Claude 3.5 Sonnet Documentation](https://docs.anthropic.com/claude/docs/models-overview)
+- [Anthropic API Reference](https://docs.anthropic.com/claude/reference/)
+- [Claude Cookbook](https://github.com/anthropics/anthropic-cookbook)
+- [Prompt Engineering Guide](https://docs.anthropic.com/claude/docs/prompt-engineering)
+
+## Status
+**Ring: ADOPT** - Production-ready, particularly strong for coding and reasoning tasks. Recommended for applications requiring long context, complex instructions, or enhanced safety.
+
+## Last Updated
+2024-10-17
+
+# Claude
+
+## Overview
+Anthropic's AI assistant focused on being helpful, harmless, and honest, with strong reasoning capabilities and extended context windows.
+
+## Key Benefits
+- 200k token context window
+- Strong analytical capabilities
+- Constitutional AI for safety
+- Excellent at long-form content
+- Vision capabilities (Claude 3)
+
+## When to Use
+- Long document analysis
+- Research and writing tasks
+- Complex reasoning problems
+- Code analysis and generation
+- Safety-critical applications
+
+## Considerations
+- Smaller ecosystem than OpenAI
+- Limited availability in some regions
+- API rate limits
+- Cost per token for large contexts
+
+## Recommended Tools
+- Claude.ai web interface
+- Anthropic API
+- Claude for Slack
+
+## Resources
+- [Claude.ai](https://claude.ai)
+- [Anthropic API Documentation](https://docs.anthropic.com)
+- [Claude 3 Model Card](https://www.anthropic.com/claude)
+
+## Status
+**Ring: ADOPT** - Excellent alternative to GPT-4, especially for long contexts
+
+## Last Updated
+2024-01-14
+`
+    },
+    {
+        name: "claude.md",
         content: `---
 name: "Claude 3.5 Sonnet"
 ring: "adopt"

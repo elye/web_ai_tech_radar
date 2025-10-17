@@ -10,6 +10,7 @@ class TechnologyRadar {
         this.selectedTech = null;
         this.adminMode = false;
         this.theme = 'light';
+        this.showLabels = false;
         this.filters = {
             search: '',
             quadrant: '',
@@ -139,6 +140,13 @@ class TechnologyRadar {
             this.filters.featured = !this.filters.featured;
             e.target.classList.toggle('active');
             this.applyFilters();
+        });
+        
+        // Label toggle
+        document.getElementById('labelToggle').addEventListener('click', (e) => {
+            this.showLabels = !this.showLabels;
+            e.target.classList.toggle('active');
+            this.renderRadar();
         });
         
         // Theme toggle
@@ -406,34 +414,39 @@ class TechnologyRadar {
                     d3.select(this).select('circle')
                         .transition()
                         .duration(200)
-                        .attr('r', tech.featured ? 16 : 14);
+                        .attr('r', 14);
                 })
                 .on('mouseleave', function(event) {
                     // Shrink back to normal size
                     d3.select(this).select('circle')
                         .transition()
                         .duration(200)
-                        .attr('r', tech.featured ? 12 : 10);
+                        .attr('r', 10);
                 });
             
             // Draw blip circle
             blipGroup.append('circle')
-                .attr('r', tech.featured ? 12 : 10)
+                .attr('r', 10)
                 .attr('fill', ringColors[tech.ring])
                 .attr('opacity', 0.8);
             
-            // Add number or icon
-            if (tech.featured) {
+            // Add number
+            blipGroup.append('text')
+                .attr('class', 'blip-number')
+                .attr('dy', '0.35em')
+                .text(index + 1);
+            
+            // Add label if enabled
+            if (this.showLabels) {
                 blipGroup.append('text')
-                    .attr('class', 'blip-number')
-                    .attr('dy', '0.35em')
-                    .text('⭐')
-                    .style('font-size', '16px');
-            } else {
-                blipGroup.append('text')
-                    .attr('class', 'blip-number')
-                    .attr('dy', '0.35em')
-                    .text(index + 1);
+                    .attr('class', 'blip-label')
+                    .attr('dy', '1.8em')
+                    .text(tech.name)
+                    .style('font-size', '11px')
+                    .style('fill', 'var(--text-primary)')
+                    .style('text-anchor', 'middle')
+                    .style('pointer-events', 'none')
+                    .style('font-weight', '500');
             }
         });
     }

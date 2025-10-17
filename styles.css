@@ -660,6 +660,15 @@
     pointer-events: none;
 }
 
+.blip-label {
+    font-size: 11px;
+    font-weight: 500;
+    fill: var(--text-primary);
+    text-anchor: middle;
+    pointer-events: none;
+    text-shadow: 0 0 3px var(--bg-primary), 0 0 3px var(--bg-primary);
+}
+
 .quadrant-label {
     font-size: 18px;
     font-weight: bold;

@@ -389,30 +389,69 @@ class TechnologyRadar {
                 .style('cursor', 'pointer')
                 .on('click', () => this.showTechnologyDetails(tech))
                 .on('mouseenter', function(event) {
+                    const currentBlip = d3.select(this);
+                    
                     // Grow the blip on hover
-                    d3.select(this).select('circle')
+                    currentBlip.select('circle')
                         .transition()
                         .duration(200)
-                        .attr('r', 14);
+                        .attr('r', 16);
+                    
+                    // Show hover label - positioned below the blip
+                    const hoverLabel = currentBlip.append('g')
+                        .attr('class', 'hover-label');
+                    
+                    // Add text first to measure it
+                    const text = hoverLabel.append('text')
+                        .attr('dy', '2.8em')
+                        .attr('pointer-events', 'none')
+                        .style('font-size', '13px')
+                        .style('font-weight', 'bold')
+                        .style('text-anchor', 'middle')
+                        .style('fill', '#000')
+                        .text(tech.name);
+                    
+                    // Get text dimensions
+                    const bbox = text.node().getBBox();
+                    
+                    // Add background rectangle before text
+                    hoverLabel.insert('rect', 'text')
+                        .attr('x', bbox.x - 6)
+                        .attr('y', bbox.y - 3)
+                        .attr('width', bbox.width + 12)
+                        .attr('height', bbox.height + 6)
+                        .attr('rx', 4)
+                        .attr('pointer-events', 'none')
+                        .style('fill', 'white')
+                        .style('stroke', ringColors[tech.ring])
+                        .style('stroke-width', 2)
+                        .style('opacity', 0.98);
                 })
                 .on('mouseleave', function(event) {
+                    const currentBlip = d3.select(this);
+                    
                     // Shrink back to normal size
-                    d3.select(this).select('circle')
+                    currentBlip.select('circle')
                         .transition()
                         .duration(200)
                         .attr('r', 10);
+                    
+                    // Remove hover label
+                    currentBlip.select('.hover-label').remove();
                 });
             
             // Draw blip circle
             blipGroup.append('circle')
                 .attr('r', 10)
                 .attr('fill', ringColors[tech.ring])
-                .attr('opacity', 0.8);
+                .attr('opacity', 0.8)
+                .style('pointer-events', 'all');
             
             // Add number
             blipGroup.append('text')
                 .attr('class', 'blip-number')
                 .attr('dy', '0.35em')
+                .attr('pointer-events', 'none')
                 .text(index + 1);
             
             // Add label if enabled
@@ -420,11 +459,11 @@ class TechnologyRadar {
                 blipGroup.append('text')
                     .attr('class', 'blip-label')
                     .attr('dy', '1.8em')
+                    .attr('pointer-events', 'none')
                     .text(tech.name)
                     .style('font-size', '11px')
                     .style('fill', 'var(--text-primary)')
                     .style('text-anchor', 'middle')
-                    .style('pointer-events', 'none')
                     .style('font-weight', '500');
             }
         });

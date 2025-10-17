@@ -641,6 +641,7 @@
 
 .blip circle {
     transition: r 0.2s ease, filter 0.2s ease;
+    pointer-events: all;
 }
 
 .blip:hover circle {
@@ -652,12 +653,22 @@
     stroke-width: 3;
 }
 
+.hover-label,
+.hover-label *,
+.blip-label,
+.blip-number {
+    pointer-events: none !important;
+}
+
+.hover-label rect {
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+}
+
 .blip-number {
     font-size: 12px;
     font-weight: bold;
     fill: white;
     text-anchor: middle;
-    pointer-events: none;
 }
 
 .blip-label {

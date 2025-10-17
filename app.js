@@ -236,25 +236,25 @@ class TechnologyRadar {
     
     applyFilters() {
         this.filteredTechnologies = this.technologies.filter(tech => {
-            // Search filter
-            if (this.filters.search) {
+            // Search filter - only apply if search text exists
+            if (this.filters.search && this.filters.search.trim()) {
                 const searchText = MarkdownParser.extractSearchText(tech);
                 if (!searchText.includes(this.filters.search)) {
                     return false;
                 }
             }
             
-            // Quadrant filter
-            if (this.filters.quadrant && tech.quadrant !== this.filters.quadrant) {
+            // Quadrant filter - only apply if a specific quadrant is selected
+            if (this.filters.quadrant && this.filters.quadrant.trim() && tech.quadrant !== this.filters.quadrant) {
                 return false;
             }
             
-            // Ring filter
-            if (this.filters.ring && tech.ring !== this.filters.ring) {
+            // Ring filter - only apply if a specific ring is selected
+            if (this.filters.ring && this.filters.ring.trim() && tech.ring !== this.filters.ring) {
                 return false;
             }
             
-            // Featured filter
+            // Featured filter - only apply if featured is explicitly enabled
             if (this.filters.featured && !tech.featured) {
                 return false;
             }
@@ -346,8 +346,20 @@ class TechnologyRadar {
                 .attr('transform', `translate(${position.x},${position.y})`)
                 .style('cursor', 'pointer')
                 .on('click', () => this.showTechnologyDetails(tech))
-                .on('mouseenter', (event) => this.showTooltip(event, tech))
-                .on('mouseleave', () => this.hideTooltip());
+                .on('mouseenter', function(event) {
+                    // Grow the blip on hover
+                    d3.select(this).select('circle')
+                        .transition()
+                        .duration(200)
+                        .attr('r', tech.featured ? 16 : 14);
+                })
+                .on('mouseleave', function(event) {
+                    // Shrink back to normal size
+                    d3.select(this).select('circle')
+                        .transition()
+                        .duration(200)
+                        .attr('r', tech.featured ? 12 : 10);
+                });
             
             // Draw blip circle
             blipGroup.append('circle')

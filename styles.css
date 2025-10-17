@@ -637,12 +637,14 @@
 /* Radar Specific Styles */
 .blip {
     cursor: pointer;
-    transition: all 0.3s ease;
 }
 
-.blip:hover {
-    transform: scale(1.3);
-    filter: brightness(1.2);
+.blip circle {
+    transition: r 0.2s ease, filter 0.2s ease;
+}
+
+.blip:hover circle {
+    filter: brightness(1.3) drop-shadow(0 0 8px currentColor);
 }
 
 .blip.selected {

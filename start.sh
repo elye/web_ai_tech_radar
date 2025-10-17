@@ -11,15 +11,15 @@ if command -v python3 &> /dev/null; then
     echo "✓ Python 3 found"
     echo ""
     
-    # Regenerate sample-data.js from markdown files
-    echo "📝 Regenerating sample-data.js from markdown files..."
-    python3 generate-sample-data.py
+    # Update manifest.json from markdown files
+    echo "📝 Updating manifest.json from markdown files..."
+    python3 update-manifest.py
     
     if [ $? -eq 0 ]; then
-        echo "✓ Sample data regenerated successfully"
+        echo "✓ Manifest updated successfully"
     else
-        echo "⚠️  Warning: Failed to regenerate sample-data.js"
-        echo "   The app will use existing data"
+        echo "⚠️  Warning: Failed to update manifest.json"
+        echo "   The app will use existing manifest"
     fi
     
     echo ""
@@ -37,15 +37,15 @@ elif command -v python &> /dev/null; then
     echo "✓ Python 2 found"
     echo ""
     
-    # Regenerate sample-data.js from markdown files
-    echo "📝 Regenerating sample-data.js from markdown files..."
-    python generate-sample-data.py
+    # Update manifest.json from markdown files
+    echo "📝 Updating manifest.json from markdown files..."
+    python update-manifest.py
     
     if [ $? -eq 0 ]; then
-        echo "✓ Sample data regenerated successfully"
+        echo "✓ Manifest updated successfully"
     else
-        echo "⚠️  Warning: Failed to regenerate sample-data.js"
-        echo "   The app will use existing data"
+        echo "⚠️  Warning: Failed to update manifest.json"
+        echo "   The app will use existing manifest"
     fi
     
     echo ""

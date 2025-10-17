@@ -50,29 +50,21 @@ class TechnologyRadar {
     }
     
     async loadMarkdownFiles() {
-        const quadrants = ['models', 'techniques', 'tools', 'platforms'];
         const technologies = [];
         
-        console.log('🔍 Scanning radar-data/ directories...');
+        console.log('🔍 Loading radar data from manifest...');
         
-        // Load all markdown files from each quadrant
-        for (const quadrant of quadrants) {
-            try {
-                // Fetch the directory listing
-                const dirResponse = await fetch(`radar-data/${quadrant}/`);
-                const html = await dirResponse.text();
-                
-                // Parse HTML to find .md files
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, 'text/html');
-                const links = Array.from(doc.querySelectorAll('a'))
-                    .map(a => a.getAttribute('href'))
-                    .filter(href => href && href.endsWith('.md') && !href.startsWith('.'));
-                
-                console.log(`  Found ${links.length} files in ${quadrant}/`);
+        try {
+            // Fetch the manifest file that lists all markdown files
+            const manifestResponse = await fetch('radar-data/manifest.json');
+            const manifest = await manifestResponse.json();
+            
+            // Load all markdown files from each quadrant
+            for (const [quadrant, filenames] of Object.entries(manifest)) {
+                console.log(`  Loading ${filenames.length} files from ${quadrant}/`);
                 
                 // Load each markdown file
-                for (const filename of links) {
+                for (const filename of filenames) {
                     try {
                         const fileResponse = await fetch(`radar-data/${quadrant}/${filename}`);
                         const content = await fileResponse.text();
@@ -85,9 +77,9 @@ class TechnologyRadar {
                         console.error(`  ⚠️  Error loading ${quadrant}/${filename}:`, error);
                     }
                 }
-            } catch (error) {
-                console.error(`❌ Error scanning ${quadrant}/ directory:`, error);
             }
+        } catch (error) {
+            console.error('❌ Error loading manifest:', error);
         }
         
         this.technologies = technologies;

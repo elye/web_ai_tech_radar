@@ -10,7 +10,7 @@ The easiest way to run the application is:
 
 This script will:
 1. ✅ Check for Python 3 installation
-2. 📝 **Automatically regenerate `sample-data.js`** from your markdown files
+2. 📝 Update the manifest file (`radar-data/manifest.json`)
 3. 🚀 Start a local web server on http://localhost:8000
 
 ---
@@ -69,27 +69,23 @@ GPT-5 is the next generation language model from OpenAI...
 ./start.sh
 ```
 
-The script will **automatically regenerate `sample-data.js`** with your new technology!
+The script will **automatically update the manifest** with your new technology!
 
 ### Step 4: Refresh Browser
 
-Open http://localhost:8000 in your browser. The new technology will appear automatically because:
-1. `sample-data.js` was regenerated with the new entry
-2. The version number was auto-incremented
-3. The app detects the version change and reloads fresh data
+Open http://localhost:8000 in your browser. The new technology will appear automatically.
 
 ---
 
-## Manual Regeneration (Alternative)
+## Manual Manifest Update (Alternative)
 
-If you prefer to regenerate manually without restarting the server:
+If you prefer to update the manifest manually without restarting the server:
 
 ```bash
-# Regenerate sample-data.js
-python3 generate-sample-data.py
+# Update manifest.json
+python3 update-manifest.py
 
 # Then refresh your browser
-# The app will auto-detect the version change
 ```
 
 ---
@@ -125,18 +121,9 @@ radar-data/
 ### Data Flow
 
 1. **Source of Truth**: Markdown files in `radar-data/`
-2. **Generation**: `generate-sample-data.py` reads all markdown files
-3. **Output**: Creates `sample-data.js` with embedded data + version
-4. **Runtime**: App loads from `sample-data.js` (not markdown files)
-5. **Auto-reload**: Version check triggers fresh data load
-
-### Version Management
-
-Every time `generate-sample-data.py` runs:
-- It increments the version in `sample-data.js`
-- Format: `YYYY-MM-DD-vN` (e.g., `2024-10-17-v5`)
-- App compares stored version vs current version
-- If different → reloads data automatically
+2. **Manifest**: `radar-data/manifest.json` lists all markdown files
+3. **Runtime**: App fetches manifest, then loads each markdown file listed
+4. **Compatibility**: Works on both local servers and static hosts (Cloudflare Pages, Netlify, etc.)
 
 ---
 
@@ -147,8 +134,8 @@ Every time `generate-sample-data.py` runs:
 # 1. Create file
 vim radar-data/models/new-tech.md
 
-# 2. Run start script (auto-regenerates)
-./start.sh
+# 2. Update manifest
+python3 update-manifest.py
 
 # 3. Refresh browser - new tech appears!
 ```
@@ -158,9 +145,7 @@ vim radar-data/models/new-tech.md
 # 1. Edit file
 vim radar-data/models/gpt-4o.md
 
-# 2. Restart server (auto-regenerates)
-# Press Ctrl+C to stop server
-./start.sh
+# 2. No need to update manifest (file list unchanged)
 
 # 3. Refresh browser - changes appear!
 ```
@@ -171,8 +156,7 @@ vim radar-data/models/gpt-4o.md
 vim radar-data/tools/cursor.md
 # Change: ring: "trial" → ring: "adopt"
 
-# 2. Restart server
-./start.sh
+# 2. No need to update manifest (file list unchanged)
 
 # 3. Refresh browser - position updated!
 ```
@@ -186,8 +170,10 @@ mv radar-data/tools/some-tool.md radar-data/platforms/
 vim radar-data/platforms/some-tool.md
 # Change: quadrant: "tools" → quadrant: "platforms"
 
-# 3. Restart server
-./start.sh
+# 3. Update manifest (file moved to different directory)
+python3 update-manifest.py
+
+# 4. Refresh browser - quadrant updated!
 ```
 
 ---
@@ -197,17 +183,17 @@ vim radar-data/platforms/some-tool.md
 ### Keep Server Running
 If you're making many changes, you can:
 1. Keep the server running
-2. Manually regenerate in another terminal:
+2. Update manifest when you add/remove files:
    ```bash
-   python3 generate-sample-data.py
+   python3 update-manifest.py
    ```
-3. Refresh browser (auto-detects new version)
+3. Refresh browser
 
 ### Clear Browser Cache
 If you see stale data:
 1. Open browser DevTools (F12)
 2. Go to Application → Storage → Local Storage
-3. Delete `ai-tech-radar-data` and `sample-data-version`
+3. Delete `ai-tech-radar-data`
 4. Refresh page
 
 Or use the helper page:
@@ -218,10 +204,12 @@ http://localhost:8000/force-refresh.html
 ### Check Console Logs
 Open browser console to see:
 ```
-Sample data version changed, reloading fresh data...
-Loaded 40 technologies, 40 filtered
-Init: 40 total, 40 filtered
-Rendering 40 blips...
+🔍 Loading radar data from manifest...
+  Loading 7 files from models/
+  Loading 8 files from platforms/
+  Loading 8 files from techniques/
+  Loading 18 files from tools/
+✅ Loaded 41 technologies total
 ```
 
 ---
@@ -229,10 +217,10 @@ Rendering 40 blips...
 ## Troubleshooting
 
 ### "Technology not showing up"
-- ✅ Did you restart the server with `./start.sh`?
-- ✅ Did `generate-sample-data.py` run successfully?
-- ✅ Check console for version change message
-- ✅ Try force refresh: http://localhost:8000/force-refresh.html
+- ✅ Did you update the manifest with `python3 update-manifest.py`?
+- ✅ Did the script run successfully?
+- ✅ Check browser console for errors
+- ✅ Try hard refresh (Cmd+Shift+R or Ctrl+Shift+R)
 
 ### "Validation errors"
 ```bash
@@ -293,8 +281,8 @@ For automated deployments, add this to your build script:
 # Validate all files
 python3 validate.py || exit 1
 
-# Regenerate sample data
-python3 generate-sample-data.py || exit 1
+# Update manifest
+python3 update-manifest.py || exit 1
 
 # Deploy (example)
 # rsync -avz . user@server:/var/www/radar/
@@ -304,8 +292,14 @@ python3 generate-sample-data.py || exit 1
 
 ## Summary
 
-**The key insight**: The app loads from `sample-data.js`, not directly from markdown files. So whenever you add/edit markdown files, you must regenerate `sample-data.js`.
+**Key insight**: The app loads markdown files using a manifest (`radar-data/manifest.json`) that lists all files. This works on both local servers and static hosting platforms.
 
-**The solution**: The `start.sh` script now does this automatically! Just run `./start.sh` and it handles everything.
+**When to update manifest**: 
+- ✅ When you add new markdown files
+- ✅ When you delete markdown files  
+- ✅ When you move files between quadrants
+- ❌ NOT needed when just editing file content
+
+**The solution**: Run `python3 update-manifest.py` after adding/removing/moving files, or use `./start.sh` which does it automatically!
 
 🎯 **Happy radar building!**

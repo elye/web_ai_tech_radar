@@ -2,6 +2,19 @@
 
 This project is ready to deploy to Cloudflare Pages with zero configuration!
 
+## ⚠️ Important: Before Deploying
+
+**Always update the manifest before deploying:**
+
+```bash
+python3 update-manifest.py
+git add radar-data/manifest.json
+git commit -m "Update manifest"
+git push
+```
+
+The manifest file (`radar-data/manifest.json`) is required for Cloudflare Pages because static hosts don't serve directory listings. Run `update-manifest.py` whenever you add/remove markdown files.
+
 ## Quick Deploy
 
 ### Option 1: Via Cloudflare Dashboard (Recommended)

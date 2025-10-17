@@ -69,14 +69,16 @@ ai-tech-radar/
 
 ## 🔄 How It Works
 
-The radar **automatically scans and loads** all markdown files when you open the page:
+The radar loads all markdown files using a manifest system:
 
-1. The app scans all four `radar-data/` subdirectories
-2. Any `.md` files found are automatically loaded and parsed
+1. All markdown files are listed in `radar-data/manifest.json`
+2. The app fetches this manifest and loads each file
 3. Technologies appear on the radar instantly
-4. **No build step, no generation, no manifest - 100% dynamic!**
+4. **Works on both local servers and static hosts (Cloudflare Pages, Netlify, etc.)**
 
-**Just add/edit/delete markdown files and refresh your browser!** 🎉
+**When you add/edit/delete markdown files:**
+1. Run `python3 update-manifest.py` to update the manifest
+2. Refresh your browser - changes appear instantly! 🎉
 
 ## 📝 Adding a New Technology
 
@@ -104,9 +106,14 @@ featured: false                  # true for featured technologies
 
 4. Write your content using standard markdown below the frontmatter
 
-5. **Refresh your browser** - your new technology appears instantly! 🎉
+5. **Update the manifest** (required for deployment):
+   ```bash
+   python3 update-manifest.py
+   ```
 
-**That's it!** No build step, no generation script, nothing to run. The app automatically discovers and loads all markdown files.
+6. **Refresh your browser** - your new technology appears instantly! 🎉
+
+**Important**: Always run `update-manifest.py` after adding/removing files. This ensures the app works on both local servers and static hosting platforms (Cloudflare Pages, Netlify, GitHub Pages, etc.)
 
 ### Method 2: Using the UI (Temporary Changes)
 
@@ -217,6 +224,16 @@ Click **Import Data** in the footer to:
 Supports both `.json` (full export) and `.md` (individual files) formats.
 
 ## 🌐 Deployment
+
+### Cloudflare Pages (Recommended)
+
+See [CLOUDFLARE_DEPLOYMENT.md](CLOUDFLARE_DEPLOYMENT.md) for detailed instructions.
+
+**Quick steps:**
+1. Update manifest: `python3 update-manifest.py`
+2. Push to GitHub
+3. Connect Cloudflare Pages to your repository
+4. Deploy with zero configuration!
 
 ### GitHub Pages
 

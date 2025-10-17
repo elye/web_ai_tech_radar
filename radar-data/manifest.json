@@ -1,0 +1,51 @@
+{
+  "models": [
+    "claude-3-5-sonnet.md",
+    "deepseek.md",
+    "gemini-1-5-pro.md",
+    "gpt-4o.md",
+    "llama-3-1.md",
+    "mistral-large-2.md",
+    "o1-preview.md"
+  ],
+  "platforms": [
+    "anthropic-api.md",
+    "aws-bedrock.md",
+    "azure-openai.md",
+    "gemini-api.md",
+    "openai-api.md",
+    "replicate.md",
+    "together-ai.md",
+    "vertex-ai.md"
+  ],
+  "techniques": [
+    "agentic-workflows.md",
+    "constitutional-ai.md",
+    "fine-tuning-llms.md",
+    "mixture-of-experts.md",
+    "multi-modal-ai.md",
+    "prompt-engineering.md",
+    "rag.md",
+    "rlhf.md"
+  ],
+  "tools": [
+    "aider.md",
+    "cline.md",
+    "cursor.md",
+    "dspy.md",
+    "github-copilot.md",
+    "huggingface.md",
+    "jax.md",
+    "langchain.md",
+    "llamaindex.md",
+    "ollama.md",
+    "python-ml.md",
+    "pytorch.md",
+    "rust-ai.md",
+    "semantic-kernel.md",
+    "tensorflow.md",
+    "v0-vercel.md",
+    "weights-and-biases.md",
+    "windsurf-editor.md"
+  ]
+}

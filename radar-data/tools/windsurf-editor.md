@@ -5,6 +5,7 @@ quadrant: "tools"
 tags: ["coding", "ai-editor", "agentic", "ide"]
 date: "2024-10-17"
 featured: false
+cost: "freemium"
 ---
 
 # Windsurf Editor
@@ -34,6 +35,9 @@ Codeium's agentic AI-powered IDE built on VS Code, featuring "Cascade" - an AI f
 - Requires learning new agentic interaction patterns
 - Performance varies with codebase size
 - Limited track record compared to established tools
+
+## Cost
+**Freemium** - Free tier available with basic features. Pro ($10/month): unlimited premium completions, priority support. Teams ($15/user/month): team features, analytics. Enterprise: custom pricing. More affordable than Cursor while providing similar agentic capabilities.
 
 ## Recommended Tools
 - Works standalone as full IDE

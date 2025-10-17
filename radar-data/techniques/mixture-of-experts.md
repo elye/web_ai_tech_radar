@@ -5,6 +5,7 @@ quadrant: "techniques"
 tags: ["architecture", "scaling", "efficiency"]
 date: "2024-01-01"
 featured: false
+cost: "free"
 ---
 
 # Mixture of Experts (MoE)
@@ -29,6 +30,9 @@ A neural network architecture where different "expert" sub-networks specialize i
 - Routing challenges
 - Limited production implementations
 - Requires significant infrastructure
+
+## Cost
+**Free** - MoE architecture itself is free (research technique). Implementation costs depend on approach: use existing MoE models like Mixtral 8x7B (~$0.24-$0.72/1M tokens via API, or free self-hosted), or train custom MoE (requires significant GPU resources, $10,000-$1M+ depending on scale).
 
 ## Recommended Tools
 - Mistral AI's Mixtral model

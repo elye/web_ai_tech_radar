@@ -2,9 +2,10 @@
 name: "GPT-4o"
 ring: "adopt"
 quadrant: "models"
-tags: ["openai", "llm", "multimodal", "gpt-4"]
+tags: ["openai", "llm", "multimodal", "api"]
 date: "2024-10-17"
 featured: true
+cost: "paid"
 ---
 
 # GPT-4o
@@ -32,6 +33,9 @@ OpenAI's flagship multimodal model with enhanced speed, vision capabilities, and
 - Output quality may vary for niche domains
 - Vision capabilities have some limitations
 - Consider fine-tuning for specialized tasks
+
+## Cost
+**Paid** - API access required. Input: $2.50/1M tokens, Output: $10/1M tokens. ChatGPT Plus subscription: $20/month for web interface access.
 
 ## Recommended Tools
 - LangChain for application development

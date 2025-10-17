@@ -5,6 +5,7 @@ quadrant: "techniques"
 tags: ["agents", "autonomous", "reasoning", "tools"]
 date: "2024-01-05"
 featured: false
+cost: "free"
 ---
 
 # Agentic Workflows
@@ -30,6 +31,9 @@ AI systems that can autonomously plan, execute, and iterate on tasks using multi
 - Error propagation across steps
 - Requires careful guardrails
 - Still emerging best practices
+
+## Cost
+**Free** - Core agentic frameworks are open-source (LangChain Agents, AutoGPT, CrewAI). Actual costs come from underlying LLM API calls, which can be significant—agents often make 10-50+ API calls per task. Budget accordingly for multi-step reasoning workflows.
 
 ## Recommended Tools
 - AutoGPT

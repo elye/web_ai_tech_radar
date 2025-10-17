@@ -5,6 +5,7 @@ quadrant: "platforms"
 tags: ["google", "cloud", "ml", "gemini"]
 date: "2024-01-11"
 featured: false
+cost: "paid"
 ---
 
 # Google Vertex AI
@@ -33,6 +34,9 @@ Google Cloud's unified AI platform providing access to Gemini models, PaLM 2, an
 - Learning curve for platform
 - Some features still in preview
 - Regional availability
+
+## Cost
+**Paid** - GCP pay-as-you-go: Gemini 1.5 Pro $1.25-$10/1M tokens (<128K context), Gemini 1.5 Flash $0.075-$0.30/1M tokens. Enterprise pricing with SLAs and support. Requires Google Cloud account. AutoML and custom training have additional costs. $300 GCP free credit for new accounts.
 
 ## Recommended Tools
 - Vertex AI Studio

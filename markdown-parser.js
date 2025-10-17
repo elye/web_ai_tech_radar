@@ -30,6 +30,7 @@ class MarkdownParser {
             date: frontmatter.date || new Date().toISOString().split('T')[0],
             featured: frontmatter.featured === true || frontmatter.featured === 'true',
             draft: frontmatter.draft === true || frontmatter.draft === 'true',
+            cost: (frontmatter.cost || '').toLowerCase() || null,
             content: htmlContent,
             rawContent: body,
             frontmatter: frontmatter

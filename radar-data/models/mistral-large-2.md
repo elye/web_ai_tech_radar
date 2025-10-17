@@ -5,6 +5,7 @@ quadrant: "models"
 tags: ["mistral", "llm", "european", "opensource"]
 date: "2024-10-17"
 featured: false
+cost: "paid"
 ---
 
 # Mistral Large 2
@@ -36,6 +37,9 @@ Mistral AI's flagship 123B parameter model offering strong performance with Euro
 - API availability varies by region
 - Less third-party integration support
 - Newer entrant with evolving capabilities
+
+## Cost
+**Paid** - API via La Plateforme: ~$2/1M input tokens, ~$6/1M output tokens. Significantly cheaper than GPT-4o/Claude while maintaining competitive quality. Self-hosted option available (weights downloadable) for infrastructure costs only. No free tier.
 
 ## Recommended Tools
 - Mistral AI Platform (API)

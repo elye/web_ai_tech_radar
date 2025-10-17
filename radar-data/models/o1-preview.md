@@ -5,6 +5,7 @@ quadrant: "models"
 tags: ["openai", "reasoning", "llm", "research"]
 date: "2024-10-17"
 featured: false
+cost: "paid"
 ---
 
 # OpenAI o1-preview
@@ -36,6 +37,9 @@ OpenAI's breakthrough reasoning model designed to "think" before responding. o1-
 - Not suitable for real-time or simple tasks
 - Overkill for straightforward queries
 - Limited context window compared to GPT-4o
+
+## Cost
+**Paid** - OpenAI API only: $15/1M input tokens, $60/1M output tokens. 6x more expensive than GPT-4o due to extended reasoning process. No free tier. Requires OpenAI API subscription with pay-as-you-go billing.
 
 ## Recommended Tools
 - OpenAI API (direct integration)

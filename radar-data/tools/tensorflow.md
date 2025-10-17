@@ -5,6 +5,7 @@ quadrant: "tools"
 tags: ["deep-learning", "framework", "google", "production"]
 date: "2024-01-12"
 featured: false
+cost: "free"
 ---
 
 # TensorFlow
@@ -33,6 +34,9 @@ Google's comprehensive machine learning platform, offering tools for building an
 - API changes in TF 1.x to 2.x
 - Debugging can be harder
 - PyTorch gaining market share
+
+## Cost
+**Free** - Fully open-source under Apache 2.0 license. TensorFlow, Keras, TF Lite, TF.js all free. Costs come from compute infrastructure (GPU/TPU), cloud services (GCP TPU ~$1-$8/hour), or hardware purchase. No licensing fees, completely free commercially.
 
 ## Recommended Tools
 - Keras for high-level API

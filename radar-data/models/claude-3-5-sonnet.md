@@ -2,9 +2,10 @@
 name: "Claude 3.5 Sonnet"
 ring: "adopt"
 quadrant: "models"
-tags: ["anthropic", "llm", "claude", "reasoning"]
+tags: ["anthropic", "llm", "coding", "analysis"]
 date: "2024-10-17"
 featured: true
+cost: "paid"
 ---
 
 # Claude 3.5 Sonnet
@@ -34,6 +35,9 @@ Anthropic's most capable model combining intelligence, speed, and cost-effective
 - Rate limits based on tier
 - Newer model family, evolving best practices
 - May be more expensive for high-volume use
+
+## Cost
+**Paid** - API access required. Input: $3/1M tokens, Output: $15/1M tokens. Free tier available via claude.ai with usage limits.
 
 ## Recommended Tools
 - Claude Code (VS Code extension)

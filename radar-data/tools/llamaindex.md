@@ -5,6 +5,7 @@ quadrant: "tools"
 tags: ["framework", "rag", "data", "indexing"]
 date: "2024-01-09"
 featured: false
+cost: "free"
 ---
 
 # LlamaIndex
@@ -30,6 +31,9 @@ A data framework for LLM applications, specializing in ingesting, structuring, a
 - Requires understanding of indexing strategies
 - Cost of embedding generation
 - Vector database required for scale
+
+## Cost
+**Free** - Open-source MIT license. LlamaIndex library is free. Costs from: LLM API calls, embedding generation ($0.02-$0.13/1M tokens), vector database storage. LlamaParse (document parsing) has paid tier ($0.003/page after free tier). Optional LlamaCloud for enterprise (contact for pricing).
 
 ## Recommended Tools
 - LlamaIndex Python library

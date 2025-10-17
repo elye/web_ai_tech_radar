@@ -5,6 +5,7 @@ quadrant: "tools"
 tags: ["deep-learning", "framework", "research", "python"]
 date: "2024-01-14"
 featured: true
+cost: "free"
 ---
 
 # PyTorch
@@ -32,6 +33,9 @@ Facebook's (Meta's) deep learning framework, known for its flexibility, pythonic
 - Requires good GPU knowledge
 - Memory management important
 - Debugging can be challenging
+
+## Cost
+**Free** - Fully open-source under BSD license. PyTorch itself is free. Costs come from compute infrastructure: GPU/TPU for training and inference ($0.50-$8+/hour for cloud GPUs, or purchase hardware). No licensing fees, completely free to use commercially.
 
 ## Recommended Tools
 - PyTorch Lightning for structure

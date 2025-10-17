@@ -1,10 +1,11 @@
 ---
 name: "Weights & Biases"
-ring: "adopt"
+ring: "trial"
 quadrant: "tools"
-tags: ["mlops", "tracking", "monitoring", "experiments"]
-date: "2024-01-06"
+tags: ["mlops", "tracking", "experiment", "monitoring"]
+date: "2024-01-09"
 featured: false
+cost: "freemium"
 ---
 
 # Weights & Biases
@@ -31,6 +32,9 @@ A platform for experiment tracking, model versioning, dataset versioning, and co
 - Can be expensive for large teams
 - Requires integration into training code
 - Privacy considerations for data logging
+
+## Cost
+**Freemium** - Free tier: 100GB storage, unlimited experiments, up to 2 team members. Team $50/user/month: advanced features, SSO. Academic tier free for students/researchers. Enterprise custom pricing. Very generous free tier for individuals and small teams.
 
 ## Recommended Tools
 - W&B Python library

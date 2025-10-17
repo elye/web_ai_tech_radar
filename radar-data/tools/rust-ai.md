@@ -5,6 +5,7 @@ quadrant: "tools"
 tags: ["rust", "performance", "systems", "safety"]
 date: "2024-01-10"
 featured: false
+cost: "free"
 ---
 
 # Rust for AI
@@ -33,6 +34,9 @@ Rust is emerging as a compelling choice for AI infrastructure and performance-cr
 - Fewer pre-built models
 - Limited library maturity
 - Still evolving for ML use cases
+
+## Cost
+**Free** - Rust language and compiler are open-source (MIT/Apache 2.0). All major Rust ML libraries (candle, burn, linfa) are free and open-source. Costs only from: compute resources, cloud infrastructure if used. No licensing fees, completely free for commercial use.
 
 ## Recommended Tools
 - candle (ML framework)

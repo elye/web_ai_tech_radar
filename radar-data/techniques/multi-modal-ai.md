@@ -5,6 +5,7 @@ quadrant: "techniques"
 tags: ["vision", "audio", "multimodal", "gpt4"]
 date: "2024-01-08"
 featured: true
+cost: "paid"
 ---
 
 # Multi-modal AI
@@ -29,6 +30,9 @@ AI systems that can process and generate multiple types of data (text, images, a
 - More complex prompt engineering
 - Limited model availability
 - Quality varies across modalities
+
+## Cost
+**Paid** - Multi-modal capabilities typically cost more: GPT-4o with vision $2.50-$10/1M tokens (images count as token equivalents), Claude 3.5 Sonnet $3-$15/1M tokens with vision, DALL-E 3 $0.04-$0.12/image. Whisper API $0.006/minute for audio. Some open-source alternatives available (LLaVA, Stable Diffusion).
 
 ## Recommended Tools
 - GPT-4 Vision

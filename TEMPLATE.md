@@ -5,6 +5,7 @@ quadrant: "techniques"
 tags: ["tag1", "tag2", "tag3"]
 date: "2024-10-17"
 featured: false
+cost: "free"
 ---
 
 # Technology Name
@@ -30,6 +31,14 @@ Important things to know before adopting:
 - Consideration or limitation 2
 - Consideration or limitation 3
 - Learning curve or complexity notes
+
+## Cost
+**[Free | Paid | Freemium]** - Brief description of pricing model
+
+*Examples:*
+- **Free**: "Fully open source with no usage costs"
+- **Paid**: "Commercial license required, starts at $X/month"
+- **Freemium**: "Free tier with X requests/month, paid plans start at $Y"
 
 ## Recommended Tools
 List complementary tools, libraries, or frameworks that work well with this technology:
@@ -117,6 +126,7 @@ quadrant: "string"          # Required - models|techniques|tools|platforms
 tags: ["string", "string"]  # Optional - Array of tags
 date: "YYYY-MM-DD"         # Optional - ISO date format
 featured: boolean           # Optional - true|false
+cost: "string"              # Required - free|paid|freemium
 draft: boolean             # Optional - true to hide from radar
 ---
 ```

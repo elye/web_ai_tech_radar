@@ -5,6 +5,7 @@ quadrant: "platforms"
 tags: ["aws", "cloud", "llm", "serverless"]
 date: "2024-01-12"
 featured: true
+cost: "paid"
 ---
 
 # AWS Bedrock
@@ -33,6 +34,9 @@ Fully managed service providing access to foundation models from AI21 Labs, Anth
 - Pricing can be higher than direct providers
 - Regional availability varies
 - Learning curve for AWS services
+
+## Cost
+**Paid** - AWS pay-as-you-go pricing: Claude 3.5 Sonnet $3-$15/1M tokens, Claude 3 Haiku $0.25-$1.25/1M tokens, Llama 3.1 405B $2.65-$5.32/1M tokens. Pricing varies by model provider and region. No free tier, but AWS Free Tier credits may apply. On-demand or provisioned throughput available.
 
 ## Recommended Tools
 - AWS SDK for Bedrock

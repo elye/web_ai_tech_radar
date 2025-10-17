@@ -5,6 +5,7 @@ quadrant: "tools"
 tags: ["ui", "frontend", "generation", "react"]
 date: "2024-10-17"
 featured: false
+cost: "freemium"
 ---
 
 # v0 by Vercel
@@ -36,6 +37,9 @@ AI-powered generative UI tool from Vercel that creates React components from tex
 - Generated code needs review and testing
 - Best as starting point, not final product
 - Tailwind and shadcn/ui required
+
+## Cost
+**Freemium** - Free tier: 200 credits/month (enough for ~40 generations). Premium $20/month: unlimited generations, priority access, commercial usage rights. Credits refill monthly. Very generous free tier for prototyping and learning.
 
 ## Recommended Tools
 - Next.js for deployment

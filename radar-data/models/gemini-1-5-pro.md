@@ -2,9 +2,10 @@
 name: "Gemini 1.5 Pro"
 ring: "trial"
 quadrant: "models"
-tags: ["google", "llm", "multimodal", "gemini"]
+tags: ["google", "llm", "multimodal", "long-context"]
 date: "2024-10-17"
-featured: true
+featured: false
+cost: "freemium"
 ---
 
 # Gemini 1.5 Pro
@@ -35,6 +36,9 @@ Google's advanced multimodal AI model with an unprecedented 2 million token cont
 - Performance can vary across different modalities
 - Less third-party tooling than OpenAI models
 - Rate limits on extended context
+
+## Cost
+**Freemium** - Free tier: 15 requests/min, 1 million requests/day. Paid tier (Vertex AI): $1.25/1M input tokens, $5/1M output tokens for prompts ≤128K tokens.
 
 ## Recommended Tools
 - Google AI Studio for experimentation

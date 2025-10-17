@@ -5,6 +5,7 @@ quadrant: "techniques"
 tags: ["llm", "retrieval", "generation", "nlp"]
 date: "2024-01-15"
 featured: true
+cost: "free"
 ---
 
 # Retrieval-Augmented Generation (RAG)
@@ -29,6 +30,9 @@ RAG combines retrieval-based and generative AI models to produce more accurate a
 - Query quality affects retrieval accuracy
 - Latency considerations with retrieval step
 - Cost of embedding generation and vector storage
+
+## Cost
+**Free** - Technique itself is free. Costs depend on implementation: LLM API costs (per token), embedding generation ($0.02-$0.13/1M tokens), vector database storage ($0-$100+/month depending on scale). Open-source options available for all components (Chroma, local models, etc.).
 
 ## Recommended Tools
 - LangChain, LlamaIndex

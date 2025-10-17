@@ -5,6 +5,7 @@ quadrant: "tools"
 tags: ["microsoft", "orchestration", "dotnet", "enterprise"]
 date: "2024-01-06"
 featured: false
+cost: "free"
 ---
 
 # Semantic Kernel
@@ -33,6 +34,9 @@ Microsoft's SDK for integrating AI services into applications, supporting C#, Py
 - Microsoft ecosystem bias
 - Documentation still evolving
 - Fewer examples and tutorials
+
+## Cost
+**Free** - Open-source MIT license. Semantic Kernel SDK is free for C#, Python, Java. Costs come from: LLM API calls (Azure OpenAI, OpenAI API), memory/vector storage, Azure services if used. No framework licensing fees.
 
 ## Recommended Tools
 - Semantic Kernel SDK

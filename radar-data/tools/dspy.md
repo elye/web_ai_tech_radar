@@ -2,9 +2,10 @@
 name: "DSPy"
 ring: "assess"
 quadrant: "tools"
-tags: ["framework", "prompting", "optimization", "stanford"]
+tags: ["framework", "prompting", "optimization", "research"]
 date: "2024-01-07"
 featured: false
+cost: "free"
 ---
 
 # DSPy
@@ -32,6 +33,9 @@ A framework from Stanford for programming (not prompting) language models, treat
 - Learning curve for new paradigm
 - Limited production use cases
 - Rapidly evolving API
+
+## Cost
+**Free** - Open-source MIT license. DSPy library completely free. Costs from: LLM API calls during optimization (can be significant—optimizers may make hundreds of calls), evaluation dataset creation, compute for training. Compatible with any LLM provider or local models.
 
 ## Recommended Tools
 - DSPy library

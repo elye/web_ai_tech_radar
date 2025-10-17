@@ -5,6 +5,7 @@ quadrant: "tools"
 tags: ["coding", "cli", "ai-assistant", "pairing"]
 date: "2024-10-17"
 featured: false
+cost: "free"
 ---
 
 # Aider
@@ -35,6 +36,9 @@ AI pair programming tool that runs in your terminal, enabling conversational cod
 - Requires LLM API access (costs apply)
 - Less real-time than IDE extensions
 - Manual context management sometimes needed
+
+## Cost
+**Free** - Open-source MIT license, completely free to use. Only costs are LLM API calls: GPT-4o (~$2.50-$10/1M tokens), Claude 3.5 Sonnet (~$3-$15/1M tokens), or use local models (free). Bring your own API key. No subscription or additional fees.
 
 ## Recommended Tools
 - Works with GPT-4o, Claude 3.5 Sonnet, Gemini

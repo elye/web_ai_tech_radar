@@ -5,6 +5,7 @@ quadrant: "techniques"
 tags: ["llm", "prompting", "optimization"]
 date: "2024-01-10"
 featured: true
+cost: "free"
 ---
 
 # Prompt Engineering
@@ -29,6 +30,9 @@ The practice of designing and optimizing input prompts to elicit desired outputs
 - Can be brittle across different models
 - May need continuous refinement
 - Prompt injection security concerns
+
+## Cost
+**Free** - Prompt engineering itself has no cost. Only pay for underlying LLM API calls during testing and production. Cost optimization is actually one of the benefits—well-engineered prompts can reduce token usage and the need for expensive fine-tuning.
 
 ## Recommended Tools
 - OpenAI Playground

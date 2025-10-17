@@ -111,27 +111,53 @@ def validate_frontmatter(frontmatter: Dict, filepath: Path) -> List[str]:
     elif not isinstance(frontmatter['featured'], bool):
         errors.append("Field 'featured' must be boolean (true/false)")
     
+    # Cost field (required)
+    if 'cost' not in frontmatter:
+        errors.append("Missing required field: 'cost'")
+    elif frontmatter['cost'].lower() not in ['free', 'paid', 'freemium']:
+        errors.append(f"Invalid cost: '{frontmatter['cost']}'. Must be one of: free, paid, freemium")
+    
     return errors, warnings
 
-def validate_content(content: str) -> List[str]:
-    """Validate markdown content."""
+def extract_content_cost(content: str) -> str:
+    """Extract cost type from ## Cost section in content."""
+    cost_pattern = r'##\s+Cost\s*\n\s*\*\*([^*]+)\*\*'
+    match = re.search(cost_pattern, content)
+    if match:
+        return match.group(1).strip().lower()
+    return None
+
+def validate_content(content: str, frontmatter_cost: str = None) -> Tuple[List[str], List[str]]:
+    """Validate markdown content. Returns (warnings, errors)."""
     warnings = []
+    errors = []
     
     if not content.strip():
         warnings.append("Content is empty")
-        return warnings
+        return warnings, errors
     
     # Check for basic sections
-    required_sections = ['## Overview', '## Key Benefits', '## When to Use']
+    required_sections = ['## Overview', '## Key Benefits', '## When to Use', '## Cost']
     for section in required_sections:
         if section not in content:
             warnings.append(f"Missing recommended section: '{section}'")
+    
+    # Validate Cost section content matches frontmatter
+    if '## Cost' in content:
+        content_cost = extract_content_cost(content)
+        if content_cost:
+            if content_cost not in ['free', 'paid', 'freemium']:
+                errors.append(f"Invalid cost in content section: '{content_cost}'. Must be: Free, Paid, or Freemium")
+            elif frontmatter_cost and content_cost != frontmatter_cost:
+                errors.append(f"Cost mismatch: frontmatter has '{frontmatter_cost}' but content has '{content_cost}'")
+        else:
+            warnings.append("Cost section exists but format not recognized. Should start with: **Free**, **Paid**, or **Freemium**")
     
     # Check for resources
     if '## Resources' not in content or '[' not in content:
         warnings.append("No resource links found")
     
-    return warnings
+    return warnings, errors
 
 def validate_file(filepath: Path, verbose: bool = False) -> Tuple[bool, List[str], List[str]]:
     """
@@ -146,9 +172,12 @@ def validate_file(filepath: Path, verbose: bool = False) -> Tuple[bool, List[str
         return False, parse_errors, []
     
     fm_errors, fm_warnings = validate_frontmatter(frontmatter, filepath)
-    content_warnings = validate_content(content)
     
-    all_errors = fm_errors
+    # Pass frontmatter cost to content validation for cross-checking
+    frontmatter_cost = frontmatter.get('cost', '').lower() if frontmatter.get('cost') else None
+    content_warnings, content_errors = validate_content(content, frontmatter_cost)
+    
+    all_errors = fm_errors + content_errors
     all_warnings = fm_warnings + content_warnings
     
     is_valid = len(all_errors) == 0

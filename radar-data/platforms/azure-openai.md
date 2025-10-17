@@ -5,6 +5,7 @@ quadrant: "platforms"
 tags: ["azure", "microsoft", "cloud", "enterprise"]
 date: "2024-01-14"
 featured: false
+cost: "paid"
 ---
 
 # Azure OpenAI
@@ -33,6 +34,9 @@ Microsoft Azure's implementation of OpenAI models, providing enterprise-grade se
 - Region-specific availability
 - Higher base costs
 - More complex setup
+
+## Cost
+**Paid** - Azure consumption-based pricing: GPT-4o $2.50-$10/1M tokens, GPT-4o-mini $0.15-$0.60/1M tokens. Similar to OpenAI API pricing but with enterprise support included. Requires Azure subscription. Pricing varies by region and commitment level (pay-as-you-go vs provisioned throughput). No free tier.
 
 ## Recommended Tools
 - Azure OpenAI Studio

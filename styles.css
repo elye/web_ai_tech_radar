@@ -349,6 +349,43 @@
     color: #000;
 }
 
+.badge-cost {
+    font-weight: 600;
+}
+
+.badge-cost-free {
+    background: #d1fae5;
+    color: #065f46;
+    border: 1px solid #10b981;
+}
+
+.badge-cost-freemium {
+    background: #dbeafe;
+    color: #1e40af;
+    border: 1px solid #3b82f6;
+}
+
+.badge-cost-paid {
+    background: #fef3c7;
+    color: #92400e;
+    border: 1px solid #f59e0b;
+}
+
+[data-theme="dark"] .badge-cost-free {
+    background: #064e3b;
+    color: #6ee7b7;
+}
+
+[data-theme="dark"] .badge-cost-freemium {
+    background: #1e3a8a;
+    color: #93c5fd;
+}
+
+[data-theme="dark"] .badge-cost-paid {
+    background: #78350f;
+    color: #fcd34d;
+}
+
 .badge-date {
     background: var(--bg-secondary);
     color: var(--text-secondary);

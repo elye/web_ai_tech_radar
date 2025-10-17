@@ -5,6 +5,7 @@ quadrant: "platforms"
 tags: ["api", "models", "hosting", "inference"]
 date: "2024-01-08"
 featured: false
+cost: "paid"
 ---
 
 # Replicate
@@ -33,6 +34,9 @@ Cloud platform for running machine learning models via API, with a focus on maki
 - Less robust than major cloud providers
 - Smaller support organization
 - Community model quality varies
+
+## Cost
+**Paid** - Pay-per-second pricing: ~$0.0001-$0.001/second depending on GPU type. Llama models ~$0.65-$2.75/1M tokens, SDXL ~$0.0055/image. $1 free credit for new users. No subscription, only pay for actual inference time. Pricing varies widely by model and hardware requirements.
 
 ## Recommended Tools
 - Replicate API

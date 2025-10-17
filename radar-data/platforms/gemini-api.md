@@ -5,6 +5,7 @@ quadrant: "platforms"
 tags: ["google", "api", "gemini", "cloud"]
 date: "2024-10-17"
 featured: false
+cost: "freemium"
 ---
 
 # Google Gemini API
@@ -36,6 +37,9 @@ Google's unified API for accessing Gemini models through Google AI Studio and Ve
 - Less mature tooling than OpenAI
 - Context quality degradation at extreme lengths
 - Rate limits differ between tiers
+
+## Cost
+**Freemium** - Free tier via AI Studio: 15 requests/min for Gemini 1.5 Pro, 15 requests/min for Flash. Paid tier (pay-as-you-go): Gemini 1.5 Pro $1.25-$5/1M tokens (<128K context), Pro 002 $0.30-$1.20/1M tokens. Vertex AI enterprise pricing higher. Very competitive for long-context use cases.
 
 ## Recommended Tools
 - Google AI Studio for prototyping

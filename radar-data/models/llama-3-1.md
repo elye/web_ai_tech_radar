@@ -2,9 +2,10 @@
 name: "Llama 3.1 (405B)"
 ring: "trial"
 quadrant: "models"
-tags: ["meta", "llm", "opensource", "llama"]
+tags: ["meta", "llm", "opensource", "self-hosted"]
 date: "2024-10-17"
 featured: false
+cost: "free"
 ---
 
 # Llama 3.1 (405B)
@@ -36,6 +37,9 @@ Meta's largest and most capable open-source LLM with 405 billion parameters. Lla
 - Requires ML engineering expertise for deployment
 - Quality may lag proprietary models in some tasks
 - Ongoing hosting and maintenance overhead
+
+## Cost
+**Free** - Fully open-source with no licensing fees. Self-hosting costs (compute, storage) vary. Hosted inference via providers like Replicate/Together AI: ~$0.60-$3/1M tokens depending on model size.
 
 ## Recommended Tools
 - vLLM for high-performance serving

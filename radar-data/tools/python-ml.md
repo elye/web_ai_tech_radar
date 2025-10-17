@@ -2,9 +2,10 @@
 name: "Python for ML"
 ring: "adopt"
 quadrant: "tools"
-tags: ["python", "ml", "data-science", "programming"]
+tags: ["python", "language", "ml", "ecosystem"]
 date: "2024-01-15"
-featured: true
+featured: false
+cost: "free"
 ---
 
 # Python for ML
@@ -32,6 +33,9 @@ Python has become the de facto standard for machine learning and AI development,
 - Global Interpreter Lock (GIL)
 - Dependency management complexity
 - Type safety requires additional tools
+
+## Cost
+**Free** - Python is open-source (PSF License), completely free. All major ML libraries (NumPy, Pandas, PyTorch, TensorFlow, scikit-learn) are free and open-source. Costs only from: compute resources (GPUs, cloud), API services if used, commercial support if needed.
 
 ## Recommended Tools
 - NumPy, Pandas for data

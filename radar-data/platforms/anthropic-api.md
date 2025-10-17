@@ -5,6 +5,7 @@ quadrant: "platforms"
 tags: ["api", "claude", "llm", "safety"]
 date: "2024-01-13"
 featured: false
+cost: "paid"
 ---
 
 # Anthropic API
@@ -33,6 +34,9 @@ Direct API access to Claude models from Anthropic, offering advanced language un
 - Fewer third-party integrations
 - No image generation
 - API rate limits
+
+## Cost
+**Paid** - Pay-per-use API: Claude 3.5 Sonnet ($3-$15/1M tokens), Claude 3 Opus ($15-$75/1M tokens), Claude 3 Haiku ($0.25-$1.25/1M tokens). $5 free credit for new users. Prompt caching available for reduced costs on repeated contexts. No subscription required.
 
 ## Recommended Tools
 - Anthropic Python/TypeScript SDKs

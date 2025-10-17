@@ -5,6 +5,7 @@ quadrant: "tools"
 tags: ["framework", "llm", "orchestration", "python"]
 date: "2024-01-10"
 featured: false
+cost: "free"
 ---
 
 # LangChain
@@ -31,6 +32,9 @@ A framework for developing applications powered by language models, providing co
 - Learning curve for complex features
 - Performance overhead for simple tasks
 - Documentation can lag behind releases
+
+## Cost
+**Free** - Open-source Apache 2.0 license. LangChain library itself is free. Costs come from: LLM API calls, embedding generation, vector database hosting. Optional paid service: LangSmith for debugging/monitoring ($39-$199+/month for teams).
 
 ## Recommended Tools
 - LangChain Python library

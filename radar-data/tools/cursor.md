@@ -5,6 +5,7 @@ quadrant: "tools"
 tags: ["ide", "coding", "editor", "ai-native"]
 date: "2024-10-17"
 featured: true
+cost: "paid"
 ---
 
 # Cursor
@@ -36,6 +37,9 @@ The leading AI-first code editor built on VS Code. Cursor has rapidly become the
 - Learning curve for optimal AI interaction
 - API costs for premium models
 - May reduce manual coding skills over time
+
+## Cost
+**Paid** - $20/month Pro (500 fast premium requests/month, unlimited slow requests, Claude 3.5 Sonnet/GPT-4o access), $40/month Business (same as Pro with centralized billing). Free tier unavailable. Premium model usage above included quota costs extra (~$0.50-$2 per additional request).
 
 ## Recommended Tools
 - Cursor Pro subscription for best experience

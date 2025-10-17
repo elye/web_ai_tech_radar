@@ -114,6 +114,11 @@ class TechnologyRadar {
             this.applyFilters();
         });
         
+        document.getElementById('costFilter').addEventListener('change', (e) => {
+            this.filters.cost = e.target.value;
+            this.applyFilters();
+        });
+        
         document.getElementById('featuredFilter').addEventListener('click', (e) => {
             this.filters.featured = !this.filters.featured;
             e.target.classList.toggle('active');
@@ -226,6 +231,17 @@ class TechnologyRadar {
                 const techRing = (tech.ring || '').toLowerCase();
                 const filterRing = ringFilter.toLowerCase();
                 if (techRing !== filterRing) {
+                    return false;
+                }
+            }
+            
+            // Cost filter - only apply if a specific cost type is selected (not empty string)
+            const costFilter = this.filters.cost?.trim();
+            if (costFilter) {
+                // Normalize both values to lowercase for case-insensitive comparison
+                const techCost = (tech.cost || '').toLowerCase();
+                const filterCost = costFilter.toLowerCase();
+                if (techCost !== filterCost) {
                     return false;
                 }
             }
@@ -498,10 +514,13 @@ class TechnologyRadar {
         title.textContent = tech.name;
         
         // Build metadata badges
+        const costIcon = tech.cost === 'free' ? '💚' : tech.cost === 'freemium' ? '💙' : '💰';
+        const costLabel = tech.cost ? tech.cost.charAt(0).toUpperCase() + tech.cost.slice(1) : 'Unknown';
         const metadata = `
             <div class="tech-metadata">
                 <span class="tech-badge badge-ring ${tech.ring}">${tech.ring.toUpperCase()}</span>
                 <span class="tech-badge badge-tag">${this.formatQuadrant(tech.quadrant)}</span>
+                ${tech.cost ? `<span class="tech-badge badge-cost badge-cost-${tech.cost}">${costIcon} ${costLabel}</span>` : ''}
                 ${tech.featured ? '<span class="tech-badge badge-featured">⭐ Featured</span>' : ''}
                 <span class="tech-badge badge-date">📅 ${tech.date}</span>
                 ${tech.tags.map(tag => `<span class="tech-badge badge-tag">#${tag}</span>`).join('')}

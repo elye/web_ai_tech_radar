@@ -5,6 +5,7 @@ quadrant: "tools"
 tags: ["coding", "vscode", "claude", "agentic"]
 date: "2024-10-17"
 featured: false
+cost: "free"
 ---
 
 # Cline (VS Code Extension)
@@ -36,6 +37,9 @@ Autonomous coding agent for VS Code (formerly Claude Dev) that can create files,
 - Requires careful prompt engineering
 - May make mistakes requiring rollback
 - Security implications of command execution
+
+## Cost
+**Free** - Open-source VS Code extension, completely free to install and use. Only costs are LLM API calls: bring your own API key for Claude ($3-$15/1M tokens), GPT-4o ($2.50-$10/1M tokens), or use local models (free). Total cost depends on usage complexity.
 
 ## Recommended Tools
 - VS Code (required)

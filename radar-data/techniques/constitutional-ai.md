@@ -5,6 +5,7 @@ quadrant: "techniques"
 tags: ["safety", "alignment", "ethics"]
 date: "2024-01-03"
 featured: false
+cost: "free"
 ---
 
 # Constitutional AI
@@ -29,6 +30,9 @@ A method for training AI systems to be harmless and helpful by having them criti
 - Primarily research-stage
 - Constitution design is challenging
 - May reduce model capabilities in some areas
+
+## Cost
+**Free** - Constitutional AI as a technique is free to apply conceptually. Implementation requires model training costs (GPU compute, data annotation). Most practical approach: use Claude (built with Constitutional AI) at standard API rates ($3-$15/1M tokens). Custom implementation requires research budget.
 
 ## Recommended Tools
 - Anthropic Claude (uses Constitutional AI)

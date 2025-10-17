@@ -5,6 +5,7 @@ quadrant: "tools"
 tags: ["coding", "ide", "assistant", "productivity"]
 date: "2024-01-13"
 featured: true
+cost: "paid"
 ---
 
 # GitHub Copilot
@@ -32,6 +33,9 @@ AI-powered code completion tool that suggests whole lines or blocks of code as y
 - May suggest outdated patterns
 - Requires internet connection
 - Learning curve to use effectively
+
+## Cost
+**Paid** - $10/month Individual, $19/user/month Business (annual billing), $39/user/month Enterprise. Free for verified students, teachers, and maintainers of popular open-source projects. 30-day free trial available. No free tier for general users.
 
 ## Recommended Tools
 - GitHub Copilot for VS Code

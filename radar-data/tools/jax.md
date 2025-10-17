@@ -1,10 +1,11 @@
 ---
 name: "JAX"
-ring: "trial"
+ring: "assess"
 quadrant: "tools"
-tags: ["google", "research", "performance", "jit"]
-date: "2024-01-09"
+tags: ["deep-learning", "framework", "google", "research"]
+date: "2024-01-11"
 featured: false
+cost: "free"
 ---
 
 # JAX
@@ -33,6 +34,9 @@ Google's library for high-performance numerical computing and machine learning r
 - More low-level than other frameworks
 - Debugging can be challenging
 - Requires understanding of compilation
+
+## Cost
+**Free** - Open-source Apache 2.0 license. JAX and related libraries (Flax, Optax, Haiku) completely free. Costs from: GPU/TPU compute for training and inference, cloud resources if needed. No licensing fees, free for commercial use.
 
 ## Recommended Tools
 - Flax for neural networks

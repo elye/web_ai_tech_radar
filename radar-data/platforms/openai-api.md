@@ -5,6 +5,7 @@ quadrant: "platforms"
 tags: ["api", "cloud", "llm", "gpt"]
 date: "2024-01-15"
 featured: true
+cost: "paid"
 ---
 
 # OpenAI API
@@ -32,6 +33,9 @@ OpenAI's cloud API providing access to GPT-4, GPT-3.5, DALL-E, Whisper, and othe
 - Data sent to OpenAI servers
 - Requires careful prompt design
 - Model updates may change behavior
+
+## Cost
+**Paid** - Pay-per-use API pricing: GPT-4o ($2.50-$10/1M tokens), GPT-4o-mini ($0.15-$0.60/1M tokens), GPT-3.5-Turbo ($0.50-$1.50/1M tokens). $5 free credit for new users. Pricing varies by model and usage tier. No subscription required, only pay for actual usage.
 
 ## Recommended Tools
 - OpenAI Python/Node.js SDKs

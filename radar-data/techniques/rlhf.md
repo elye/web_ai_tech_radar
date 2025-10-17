@@ -5,6 +5,7 @@ quadrant: "techniques"
 tags: ["training", "alignment", "feedback"]
 date: "2023-12-28"
 featured: false
+cost: "paid"
 ---
 
 # RLHF (Reinforcement Learning from Human Feedback)
@@ -29,6 +30,9 @@ A training technique that uses human feedback to fine-tune AI models, helping th
 - Expensive and time-consuming
 - Potential for bias in feedback
 - Can introduce new failure modes
+
+## Cost
+**Paid** - RLHF is expensive: requires thousands of human annotations (typically $10-$50/hour labor), GPU compute for training ($1,000-$100,000+ depending on scale), and reinforcement learning infrastructure. Most teams use pre-aligned models (GPT-4, Claude) rather than implementing RLHF themselves.
 
 ## Recommended Tools
 - OpenAI API with RLHF models

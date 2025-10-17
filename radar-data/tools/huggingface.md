@@ -5,6 +5,7 @@ quadrant: "tools"
 tags: ["models", "transformers", "community", "hub"]
 date: "2024-01-11"
 featured: false
+cost: "freemium"
 ---
 
 # Hugging Face
@@ -31,6 +32,9 @@ The GitHub of machine learning - a platform for sharing and discovering AI model
 - Some models require significant compute
 - Rate limits on free inference API
 - Enterprise features require subscription
+
+## Cost
+**Freemium** - Free tier includes: unlimited public models/datasets, 1,000 free Inference API requests/month, basic Spaces hosting. Pro ($9/month): more compute, private repos. Enterprise ($20+/user/month): dedicated compute, SSO, SLAs. Paid Inference Endpoints for production ($0.06-$4.50/hour).
 
 ## Recommended Tools
 - Transformers library

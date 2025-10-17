@@ -1,0 +1,26 @@
+{
+  "name": "ai-tech-radar",
+  "version": "1.0.0",
+  "description": "A markdown-based Technology Radar for AI Technologies",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "serve": "python3 -m http.server 8000",
+    "validate": "python3 validate.py"
+  },
+  "keywords": [
+    "technology-radar",
+    "ai",
+    "visualization",
+    "markdown",
+    "d3"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/ai-tech-radar"
+  },
+  "devDependencies": {},
+  "dependencies": {}
+}

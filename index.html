@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Technology Radar</title>
+    
+    <!-- Critical CSS - embedded for faster initial render -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+        
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --bg-panel: #ffffff;
+            --text-primary: #212529;
+            --text-secondary: #6c757d;
+            --border-color: #dee2e6;
+            --shadow: 0 2px 8px rgba(0,0,0,0.1);
+            --shadow-lg: 0 4px 16px rgba(0,0,0,0.15);
+            --ring-adopt: #10b981;
+            --ring-trial: #3b82f6;
+            --ring-assess: #f59e0b;
+            --ring-hold: #ef4444;
+        }
+        
+        [data-theme="dark"] {
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2d2d2d;
+            --bg-panel: #242424;
+            --text-primary: #e5e5e5;
+            --text-secondary: #a0a0a0;
+            --border-color: #404040;
+            --shadow: 0 2px 8px rgba(0,0,0,0.3);
+            --shadow-lg: 0 4px 16px rgba(0,0,0,0.4);
+        }
+        
+        .container {
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+        }
+        
+        .spinner {
+            border: 4px solid var(--border-color);
+            border-top: 4px solid var(--ring-trial);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin-right: 1rem;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <div class="loading">
+            <div class="spinner"></div>
+            <span>Loading AI Technology Radar...</span>
+        </div>
+    </div>
+    
+    <!-- Navigation Bar -->
+    <nav id="navbar" class="navbar" style="display: none;">
+        <div class="navbar-brand">
+            <h1>🎯 AI Technology Radar</h1>
+        </div>
+        
+        <div class="navbar-controls">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search technologies..." />
+                <span class="search-icon">🔍</span>
+            </div>
+            
+            <select id="quadrantFilter" class="filter-select">
+                <option value="">All Quadrants</option>
+                <option value="techniques">Techniques</option>
+                <option value="tools">Tools</option>
+                <option value="platforms">Platforms</option>
+                <option value="languages-frameworks">Languages & Frameworks</option>
+            </select>
+            
+            <select id="ringFilter" class="filter-select">
+                <option value="">All Rings</option>
+                <option value="adopt">Adopt</option>
+                <option value="trial">Trial</option>
+                <option value="assess">Assess</option>
+                <option value="hold">Hold</option>
+            </select>
+            
+            <button id="featuredFilter" class="btn-filter" title="Show featured only">
+                ⭐ Featured
+            </button>
+            
+            <button id="themeToggle" class="btn-icon" title="Toggle theme">
+                🌙
+            </button>
+            
+            <button id="adminToggle" class="btn-icon" title="Toggle admin mode">
+                ⚙️
+            </button>
+            
+            <button id="helpButton" class="btn-icon" title="Keyboard shortcuts (?)">
+                ❓
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Main Container -->
+    <div id="mainContainer" class="container" style="display: none;">
+        <!-- Radar Visualization -->
+        <main class="radar-container">
+            <div id="radarChart"></div>
+            
+            <!-- Legend -->
+            <div class="legend">
+                <h3>Rings</h3>
+                <div class="legend-items">
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: var(--ring-adopt);"></span>
+                        <span>Adopt - Production ready</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: var(--ring-trial);"></span>
+                        <span>Trial - Worth pursuing</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: var(--ring-assess);"></span>
+                        <span>Assess - Worth exploring</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: var(--ring-hold);"></span>
+                        <span>Hold - Proceed with caution</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Side Panel -->
+        <aside id="sidePanel" class="side-panel collapsed">
+            <div class="panel-header">
+                <h2 id="panelTitle">Technology Details</h2>
+                <button id="closePanel" class="btn-icon">✕</button>
+            </div>
+            <div id="panelContent" class="panel-content">
+                <p class="panel-placeholder">Click on a technology blip to see details</p>
+            </div>
+            <div id="panelActions" class="panel-actions" style="display: none;">
+                <button id="editButton" class="btn-secondary">Edit</button>
+                <button id="deleteButton" class="btn-danger">Delete</button>
+            </div>
+        </aside>
+    </div>
+    
+    <!-- Floating Action Button -->
+    <button id="fabAdd" class="fab" title="Add new technology" style="display: none;">
+        ➕
+    </button>
+    
+    <!-- Activity Feed -->
+    <div id="activityFeed" class="activity-feed" style="display: none;">
+        <h3>Recent Updates</h3>
+        <div id="activityList"></div>
+    </div>
+    
+    <!-- Modal for Add/Edit -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Add Technology</h2>
+                <button id="closeModal" class="btn-icon">✕</button>
+            </div>
+            <div class="modal-body">
+                <form id="techForm">
+                    <div class="form-group">
+                        <label for="techName">Name *</label>
+                        <input type="text" id="techName" required />
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="techQuadrant">Quadrant *</label>
+                            <select id="techQuadrant" required>
+                                <option value="techniques">Techniques</option>
+                                <option value="tools">Tools</option>
+                                <option value="platforms">Platforms</option>
+                                <option value="languages-frameworks">Languages & Frameworks</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="techRing">Ring *</label>
+                            <select id="techRing" required>
+                                <option value="adopt">Adopt</option>
+                                <option value="trial">Trial</option>
+                                <option value="assess">Assess</option>
+                                <option value="hold">Hold</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="techTags">Tags (comma-separated)</label>
+                        <input type="text" id="techTags" placeholder="llm, retrieval, generation" />
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="techFeatured" />
+                            Featured Technology
+                        </label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="techContent">Content (Markdown)</label>
+                        <textarea id="techContent" rows="15" placeholder="# Technology Name
+
+## Overview
+Brief description...
+
+## Key Benefits
+- Benefit 1
+- Benefit 2
+
+## When to Use
+...
+
+## Considerations
+..."></textarea>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" id="cancelForm" class="btn-secondary">Cancel</button>
+                        <button type="submit" class="btn-primary">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Help Modal -->
+    <div id="helpModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Keyboard Shortcuts</h2>
+                <button class="btn-icon close-help">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="shortcuts">
+                    <div class="shortcut-item">
+                        <kbd>?</kbd>
+                        <span>Show this help</span>
+                    </div>
+                    <div class="shortcut-item">
+                        <kbd>/</kbd>
+                        <span>Focus search</span>
+                    </div>
+                    <div class="shortcut-item">
+                        <kbd>Esc</kbd>
+                        <span>Close panel/modal</span>
+                    </div>
+                    <div class="shortcut-item">
+                        <kbd>A</kbd>
+                        <span>Toggle admin mode</span>
+                    </div>
+                    <div class="shortcut-item">
+                        <kbd>T</kbd>
+                        <span>Toggle theme</span>
+                    </div>
+                    <div class="shortcut-item">
+                        <kbd>N</kbd>
+                        <span>New technology (admin mode)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer id="footer" class="footer" style="display: none;">
+        <div class="footer-content">
+            <span id="lastUpdated">Last updated: Loading...</span>
+            <span>|</span>
+            <span id="techCount">0 technologies</span>
+            <span>|</span>
+            <button id="exportData" class="btn-link">Export Data</button>
+            <span>|</span>
+            <button id="importData" class="btn-link">Import Data</button>
+        </div>
+    </footer>
+    
+    <input type="file" id="fileInput" style="display: none;" accept=".md,.zip" multiple />
+    
+    <!-- External Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked@11.0.0/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+    
+    <!-- App Scripts -->
+    <script src="sample-data.js"></script>
+    <script src="markdown-parser.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

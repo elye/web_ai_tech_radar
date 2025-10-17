@@ -27,18 +27,22 @@ class TechnologyRadar {
         // Load sample data or from localStorage
         await this.loadData();
         
-        // Initialize UI
-        this.setupEventListeners();
-        this.setupKeyboardShortcuts();
-        this.loadTheme();
-        this.renderRadar();
-        this.updateStats();
-        
-        // Show the app
+        // Show the app first so container has dimensions
         document.getElementById('app').style.display = 'none';
         document.getElementById('navbar').style.display = 'flex';
         document.getElementById('mainContainer').style.display = 'flex';
         document.getElementById('footer').style.display = 'block';
+        
+        // Initialize UI
+        this.setupEventListeners();
+        this.setupKeyboardShortcuts();
+        this.loadTheme();
+        
+        // Render after UI is visible (so container has dimensions)
+        setTimeout(() => {
+            this.renderRadar();
+            this.updateStats();
+        }, 0);
     }
     
     async loadData() {
@@ -49,7 +53,6 @@ class TechnologyRadar {
             try {
                 const data = JSON.parse(stored);
                 this.technologies = data.technologies || [];
-                console.log('Loaded data from localStorage');
             } catch (error) {
                 console.error('Error loading from localStorage:', error);
                 await this.loadSampleData();
@@ -267,10 +270,22 @@ class TechnologyRadar {
     
     renderRadar() {
         const container = document.getElementById('radarChart');
+        if (!container) {
+            console.error('radarChart container not found!');
+            return;
+        }
+        
         container.innerHTML = '';
         
         const width = container.clientWidth;
         const height = container.clientHeight;
+        
+        // Handle zero dimensions (container not yet visible)
+        if (width === 0 || height === 0) {
+            setTimeout(() => this.renderRadar(), 100);
+            return;
+        }
+        
         const centerX = width / 2;
         const centerY = height / 2;
         const radius = Math.min(width, height) / 2 - 50;

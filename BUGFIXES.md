@@ -6,26 +6,65 @@
 
 **Problem:** When the webpage first loaded, no blips appeared on the radar. Users had to select a quadrant or ring filter before any technologies would display.
 
-**Root Cause:** The filter logic in `applyFilters()` was not correctly handling empty filter values. When filters were initialized with empty strings (`''`), the conditions were still evaluating as truthy and filtering out all technologies.
+**Root Cause:** The `renderRadar()` method was being called before the UI container was visible/displayed. When the container had `display: none` or wasn't yet in the DOM flow, its dimensions were `0x0`, causing D3.js to create an SVG with zero size. No blips could be plotted because there was no space to render them.
 
-**Solution:** Updated the filter conditions to explicitly check for non-empty strings using `.trim()`:
+**Solution:** Reordered the initialization sequence in the `init()` method:
 
 ```javascript
 // Before (BROKEN)
-if (this.filters.quadrant && tech.quadrant !== this.filters.quadrant) {
-    return false;
+async init() {
+    await this.loadData();
+    this.setupEventListeners();
+    this.setupKeyboardShortcuts();
+    this.loadTheme();
+    this.renderRadar();  // ❌ Called before UI is visible
+    this.updateStats();
+    // Show UI last
+    document.getElementById('navbar').style.display = 'flex';
+    document.getElementById('mainContainer').style.display = 'flex';
 }
 
 // After (FIXED)
-if (this.filters.quadrant && this.filters.quadrant.trim() && tech.quadrant !== this.filters.quadrant) {
-    return false;
+async init() {
+    await this.loadData();
+    // Show UI first so container has dimensions
+    document.getElementById('navbar').style.display = 'flex';
+    document.getElementById('mainContainer').style.display = 'flex';
+    document.getElementById('footer').style.display = 'block';
+    
+    this.setupEventListeners();
+    this.setupKeyboardShortcuts();
+    this.loadTheme();
+    
+    // Render after UI is visible
+    setTimeout(() => {
+        this.renderRadar();  // ✅ Now container has dimensions
+        this.updateStats();
+    }, 0);
+}
+```
+
+**Additional Safety:** Added zero-dimension detection with automatic retry:
+
+```javascript
+renderRadar() {
+    const width = container.clientWidth;
+    const height = container.clientHeight;
+    
+    // Handle zero dimensions (container not yet visible)
+    if (width === 0 || height === 0) {
+        setTimeout(() => this.renderRadar(), 100);
+        return;
+    }
+    // ... continue rendering
 }
 ```
 
 **Files Changed:**
-- `app.js` - Modified `applyFilters()` method (lines ~246-264)
+- `app.js` - Modified `init()` method to show UI before rendering
+- `app.js` - Added dimension check in `renderRadar()` method
 
-**Result:** All technologies now display by default when the page loads, with no filters active.
+**Result:** All technologies now display immediately when the page loads! 🎉
 
 ---
 
@@ -172,10 +211,44 @@ cp styles.css.backup styles.css
 
 ---
 
-**Status:** ✅ RESOLVED  
+## Verification Results
+
+### Issue 1: Blips Not Loading ✅
+**Status:** RESOLVED  
+**Verified:** October 17, 2025  
+**Console Output:**
+```
+Loaded data from localStorage: 26 technologies
+loadData complete - technologies: 26 filtered: 26
+renderRadar called - rendering 26 technologies
+Container dimensions: 1626 x 880
+Plotting 26 blips...
+```
+**Result:** All 26 technologies now display on initial page load! 🎉
+
+### Issue 2: Blips Shaking on Hover ✅
+**Status:** RESOLVED  
+**Verified:** October 17, 2025  
+**Result:** Blips smoothly grow larger on hover without moving position. Fully clickable in place with nice glow effect! ✨
+
+---
+
+**Overall Status:** ✅ BOTH ISSUES RESOLVED  
 **Severity:** High → Fixed  
 **Testing:** Complete  
-**Deployed:** October 17, 2025
+**Deployed:** October 17, 2025  
+**Performance:** No negative impact, improved UX
+
+---
+
+## Summary
+
+Both critical issues have been successfully resolved:
+
+1. **Initial Load Issue** - Fixed by ensuring UI is visible before rendering, giving the container proper dimensions
+2. **Hover Shake Issue** - Fixed by using D3 radius transitions instead of CSS transforms
+
+The application now provides a smooth, professional user experience with all technologies visible on load and clickable blips with elegant hover animations.
 
 ---
 

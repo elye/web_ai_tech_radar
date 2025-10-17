@@ -27,6 +27,13 @@ class TechnologyRadar {
         // Load sample data or from localStorage
         await this.loadData();
         
+        // Ensure filteredTechnologies is set before rendering
+        if (this.filteredTechnologies.length === 0 && this.technologies.length > 0) {
+            this.filteredTechnologies = [...this.technologies];
+        }
+        
+        console.log(`Init: ${this.technologies.length} total, ${this.filteredTechnologies.length} filtered`);
+        
         // Show the app first so container has dimensions
         document.getElementById('app').style.display = 'none';
         document.getElementById('navbar').style.display = 'flex';
@@ -46,13 +53,30 @@ class TechnologyRadar {
     }
     
     async loadData() {
+        // Check if sample data version has changed
+        const storedVersion = localStorage.getItem('sample-data-version');
+        const currentVersion = typeof SAMPLE_DATA_VERSION !== 'undefined' ? SAMPLE_DATA_VERSION : null;
+        
         // Try to load from localStorage first
         const stored = localStorage.getItem(this.STORAGE_KEY);
+        
+        // If version changed or no version, reload from sample data
+        if (currentVersion && storedVersion !== currentVersion) {
+            console.log('Sample data version changed, reloading fresh data...');
+            await this.loadSampleData();
+            localStorage.setItem('sample-data-version', currentVersion);
+            return;
+        }
         
         if (stored) {
             try {
                 const data = JSON.parse(stored);
                 this.technologies = data.technologies || [];
+                
+                // If empty, reload from sample data
+                if (this.technologies.length === 0) {
+                    await this.loadSampleData();
+                }
             } catch (error) {
                 console.error('Error loading from localStorage:', error);
                 await this.loadSampleData();
@@ -62,6 +86,9 @@ class TechnologyRadar {
         }
         
         this.filteredTechnologies = [...this.technologies];
+        
+        // Debug log to verify data is loaded
+        console.log(`Loaded ${this.technologies.length} technologies, ${this.filteredTechnologies.length} filtered`);
     }
     
     async loadSampleData() {
@@ -247,14 +274,26 @@ class TechnologyRadar {
                 }
             }
             
-            // Quadrant filter - only apply if a specific quadrant is selected
-            if (this.filters.quadrant && this.filters.quadrant.trim() && tech.quadrant !== this.filters.quadrant) {
-                return false;
+            // Quadrant filter - only apply if a specific quadrant is selected (not empty string)
+            const quadrantFilter = this.filters.quadrant?.trim();
+            if (quadrantFilter) {
+                // Normalize both values to lowercase for case-insensitive comparison
+                const techQuadrant = (tech.quadrant || '').toLowerCase();
+                const filterQuadrant = quadrantFilter.toLowerCase();
+                if (techQuadrant !== filterQuadrant) {
+                    return false;
+                }
             }
             
-            // Ring filter - only apply if a specific ring is selected
-            if (this.filters.ring && this.filters.ring.trim() && tech.ring !== this.filters.ring) {
-                return false;
+            // Ring filter - only apply if a specific ring is selected (not empty string)
+            const ringFilter = this.filters.ring?.trim();
+            if (ringFilter) {
+                // Normalize both values to lowercase for case-insensitive comparison
+                const techRing = (tech.ring || '').toLowerCase();
+                const filterRing = ringFilter.toLowerCase();
+                if (techRing !== filterRing) {
+                    return false;
+                }
             }
             
             // Featured filter - only apply if featured is explicitly enabled
@@ -353,6 +392,7 @@ class TechnologyRadar {
         });
         
         // Plot blips
+        console.log(`Rendering ${this.filteredTechnologies.length} blips...`);
         this.filteredTechnologies.forEach((tech, index) => {
             const position = this.calculateBlipPosition(tech, radius);
             
@@ -399,12 +439,16 @@ class TechnologyRadar {
     }
     
     calculateBlipPosition(tech, radius) {
-        // Quadrant angles
+        // Quadrant angles (SVG coordinates: 0° = right, 90° = down, 180° = left, 270° = up)
+        // Top-right quadrant: 270° to 360° (or -90° to 0°)
+        // Top-left quadrant: 180° to 270°
+        // Bottom-left quadrant: 90° to 180°
+        // Bottom-right quadrant: 0° to 90°
         const quadrantAngles = {
-            'models': { start: 0, end: 90 },
-            'techniques': { start: 90, end: 180 },
-            'tools': { start: 180, end: 270 },
-            'platforms': { start: 270, end: 360 }
+            'models': { start: 270, end: 360 },      // Top-right: models
+            'platforms': { start: 0, end: 90 },      // Bottom-right: platforms  
+            'tools': { start: 90, end: 180 },        // Bottom-left: tools
+            'techniques': { start: 180, end: 270 }   // Top-left: techniques
         };
         
         // Ring radii

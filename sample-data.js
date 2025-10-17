@@ -3,6 +3,9 @@
  * Auto-generated from radar-data/ markdown files
  */
 
+// Version to detect when sample data changes
+const SAMPLE_DATA_VERSION = "2024-10-17-v4"; // Update this when regenerating
+
 const SAMPLE_DATA = [
     {
         name: "claude-3-5-sonnet.md",

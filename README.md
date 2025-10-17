@@ -58,7 +58,6 @@ ai-tech-radar/
 ├── styles.css                 # All styles and themes
 ├── app.js                     # Main application logic
 ├── markdown-parser.js         # Markdown parsing utilities
-├── sample-data.js            # Embedded sample data
 ├── radar-data/               # Markdown files for technologies
 │   ├── models/               # LLMs and AI models
 │   ├── techniques/           # AI methods and approaches
@@ -68,18 +67,20 @@ ai-tech-radar/
 └── README.md                 # This file
 ```
 
+## 🔄 How It Works
+
+The radar **automatically scans and loads** all markdown files when you open the page:
+
+1. The app scans all four `radar-data/` subdirectories
+2. Any `.md` files found are automatically loaded and parsed
+3. Technologies appear on the radar instantly
+4. **No build step, no generation, no manifest - 100% dynamic!**
+
+**Just add/edit/delete markdown files and refresh your browser!** 🎉
+
 ## 📝 Adding a New Technology
 
-### Method 1: Using the UI (Easiest)
-
-1. Click the **⚙️ Admin Mode** button in the top navigation
-2. Click the **➕ Floating Action Button** (bottom right)
-3. Fill in the form with your technology details
-4. Click **Save**
-
-The technology will be saved to browser localStorage and appear on the radar immediately.
-
-### Method 2: Creating a Markdown File
+### Method 1: Create a Markdown File (Recommended)
 
 1. Copy the `TEMPLATE.md` file
 2. Save it in the appropriate quadrant folder with a descriptive filename:
@@ -103,7 +104,18 @@ featured: false                  # true for featured technologies
 
 4. Write your content using standard markdown below the frontmatter
 
-5. Import the file using the **Import Data** button in the footer
+5. **Refresh your browser** - your new technology appears instantly! 🎉
+
+**That's it!** No build step, no generation script, nothing to run. The app automatically discovers and loads all markdown files.
+
+### Method 2: Using the UI (Temporary Changes)
+
+1. Click the **⚙️ Admin Mode** button in the top navigation
+2. Click the **➕ Floating Action Button** (bottom right)
+3. Fill in the form with your technology details
+4. Click **Save**
+
+**Note:** Changes made through the UI are stored in memory only and will be lost on page refresh. For permanent changes, create markdown files as shown in Method 1.
 
 ## 🎨 Quadrants & Rings
 

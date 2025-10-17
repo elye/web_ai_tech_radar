@@ -18,15 +18,12 @@ class TechnologyRadar {
             featured: false
         };
         
-        // Storage key for local data
-        this.STORAGE_KEY = 'ai-tech-radar-data';
-        
         this.init();
     }
     
     async init() {
-        // Load sample data or from localStorage
-        await this.loadData();
+        // Load markdown files directly from server
+        await this.loadMarkdownFiles();
         
         // Ensure filteredTechnologies is set before rendering
         if (this.filteredTechnologies.length === 0 && this.technologies.length > 0) {
@@ -53,69 +50,51 @@ class TechnologyRadar {
         }, 0);
     }
     
-    async loadData() {
-        // Check if sample data version has changed
-        const storedVersion = localStorage.getItem('sample-data-version');
-        const currentVersion = typeof SAMPLE_DATA_VERSION !== 'undefined' ? SAMPLE_DATA_VERSION : null;
+    async loadMarkdownFiles() {
+        const quadrants = ['models', 'techniques', 'tools', 'platforms'];
+        const technologies = [];
         
-        // Try to load from localStorage first
-        const stored = localStorage.getItem(this.STORAGE_KEY);
+        console.log('🔍 Scanning radar-data/ directories...');
         
-        // If version changed or no version, reload from sample data
-        if (currentVersion && storedVersion !== currentVersion) {
-            console.log('Sample data version changed, reloading fresh data...');
-            await this.loadSampleData();
-            localStorage.setItem('sample-data-version', currentVersion);
-            return;
-        }
-        
-        if (stored) {
+        // Load all markdown files from each quadrant
+        for (const quadrant of quadrants) {
             try {
-                const data = JSON.parse(stored);
-                this.technologies = data.technologies || [];
+                // Fetch the directory listing
+                const dirResponse = await fetch(`radar-data/${quadrant}/`);
+                const html = await dirResponse.text();
                 
-                // If empty, reload from sample data
-                if (this.technologies.length === 0) {
-                    await this.loadSampleData();
+                // Parse HTML to find .md files
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const links = Array.from(doc.querySelectorAll('a'))
+                    .map(a => a.getAttribute('href'))
+                    .filter(href => href && href.endsWith('.md') && !href.startsWith('.'));
+                
+                console.log(`  Found ${links.length} files in ${quadrant}/`);
+                
+                // Load each markdown file
+                for (const filename of links) {
+                    try {
+                        const fileResponse = await fetch(`radar-data/${quadrant}/${filename}`);
+                        const content = await fileResponse.text();
+                        const tech = MarkdownParser.parse(content);
+                        
+                        if (tech && !tech.draft) {
+                            technologies.push(tech);
+                        }
+                    } catch (error) {
+                        console.error(`  ⚠️  Error loading ${quadrant}/${filename}:`, error);
+                    }
                 }
             } catch (error) {
-                console.error('Error loading from localStorage:', error);
-                await this.loadSampleData();
+                console.error(`❌ Error scanning ${quadrant}/ directory:`, error);
             }
-        } else {
-            await this.loadSampleData();
         }
         
+        this.technologies = technologies;
         this.filteredTechnologies = [...this.technologies];
         
-        // Debug log to verify data is loaded
-        console.log(`Loaded ${this.technologies.length} technologies, ${this.filteredTechnologies.length} filtered`);
-    }
-    
-    async loadSampleData() {
-        // Sample data embedded in the app
-        const sampleFiles = this.getSampleData();
-        
-        this.technologies = sampleFiles.map(file => {
-            try {
-                return MarkdownParser.parse(file.content);
-            } catch (error) {
-                console.error(`Error parsing ${file.name}:`, error);
-                return null;
-            }
-        }).filter(tech => tech && !tech.draft);
-        
-        // Save to localStorage
-        this.saveData();
-    }
-    
-    saveData() {
-        const data = {
-            technologies: this.technologies,
-            lastUpdated: new Date().toISOString()
-        };
-        
-        localStorage.setItem(this.STORAGE_KEY, JSON.stringify(data));
+        console.log(`✅ Loaded ${this.technologies.length} technologies total`);
     }
     
     setupEventListeners() {
@@ -615,7 +594,6 @@ class TechnologyRadar {
             this.technologies.push(parsed);
         }
         
-        this.saveData();
         this.applyFilters();
         this.closeModal();
         this.updateStats();
@@ -634,7 +612,6 @@ class TechnologyRadar {
         const index = this.technologies.findIndex(t => t.name === tech.name);
         if (index >= 0) {
             this.technologies.splice(index, 1);
-            this.saveData();
             this.applyFilters();
             this.closePanel();
             this.updateStats();
@@ -766,7 +743,6 @@ class TechnologyRadar {
                     const data = JSON.parse(content);
                     if (data.technologies) {
                         this.technologies = data.technologies;
-                        this.saveData();
                         this.applyFilters();
                         this.updateStats();
                         this.showNotification('Data imported successfully!');
@@ -783,7 +759,6 @@ class TechnologyRadar {
             }
         }
         
-        this.saveData();
         this.applyFilters();
         this.updateStats();
     }
@@ -795,11 +770,6 @@ class TechnologyRadar {
             reader.onerror = reject;
             reader.readAsText(file);
         });
-    }
-    
-    getSampleData() {
-        // This will be populated with sample markdown files
-        return SAMPLE_DATA;
     }
 }
 

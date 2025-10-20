@@ -1,18 +1,18 @@
 ---
 name: "OpenAI o1-preview"
 organization: "OpenAI"
-ring: "assess"
+ring: "hold"
 quadrant: "models"
-tags: ["openai", "reasoning", "llm", "research"]
-date: "2024-10-17"
+tags: ["openai", "reasoning", "llm", "research", "legacy"]
+date: "2024-09-12"
 featured: false
 cost: "paid"
 ---
 
-# OpenAI o1-preview
+# OpenAI o1-preview (Superseded by o1)
 
 ## Overview
-OpenAI's breakthrough reasoning model designed to "think" before responding. o1-preview uses extended chain-of-thought reasoning internally to solve complex problems in science, mathematics, and coding, achieving PhD-level performance on many benchmarks.
+**This model has been superseded by o1 (full production release).** o1-preview was OpenAI's initial preview reasoning model. The full o1 release offers improved performance and is now recommended. See `o1.md` for the current recommendation.
 
 ## Key Benefits
 - Revolutionary reasoning capabilities via internal chain-of-thought
@@ -53,7 +53,14 @@ OpenAI's breakthrough reasoning model designed to "think" before responding. o1-
 - [API Reference](https://platform.openai.com/docs/api-reference)
 
 ## Status
-**Ring: ASSESS** - Groundbreaking for specific complex reasoning tasks but preview quality with limitations. Worth exploring for hard problems in math, science, and coding. Not suitable as general-purpose model. Monitor for evolution to full release.
+**Ring: HOLD** - Superseded by o1. The preview model is no longer recommended for new projects. Use o1 instead for production reasoning tasks. o1-preview may be deprecated by OpenAI in the future.
+
+## Migration Path
+If using o1-preview, migrate to **o1** for:
+- Better performance and reliability
+- Production-grade support
+- Improved reasoning and verification
+- Same pricing structure but better value
 
 ## Last Updated
 2024-10-17

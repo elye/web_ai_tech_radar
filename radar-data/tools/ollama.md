@@ -4,7 +4,7 @@ organization: "Open Source"
 ring: "adopt"
 quadrant: "tools"
 tags: ["llm", "open-source", "local-deployment", "docker"]
-date: "2025-10-17"
+date: "2023-06-26"
 featured: true
 cost: "free"
 ---

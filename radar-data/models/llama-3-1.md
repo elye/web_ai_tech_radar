@@ -4,7 +4,7 @@ organization: "Meta"
 ring: "trial"
 quadrant: "models"
 tags: ["meta", "llm", "opensource", "self-hosted"]
-date: "2024-10-17"
+date: "2024-07-23"
 featured: false
 cost: "free"
 ---

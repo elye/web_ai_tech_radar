@@ -4,7 +4,7 @@ organization: "OpenAI"
 ring: "assess"
 quadrant: "models"
 tags: ["ai", "ml", "nlp", "code", "generative"]
-date: "2025-10-20"
+date: "2024-12-01"
 featured: false
 cost: "paid"
 draft: false

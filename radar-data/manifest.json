@@ -1,5 +1,6 @@
 {
   "models": [
+    "claude-3-5-haiku.md",
     "claude-3-5-sonnet.md",
     "deepseek.md",
     "gemini-1-5-pro.md",
@@ -9,8 +10,10 @@
     "gpt-5-0-codex.md",
     "grok.md",
     "llama-3-1.md",
+    "llama-3-2.md",
     "mistral-large-2.md",
-    "o1-preview.md"
+    "o1-preview.md",
+    "o1.md"
   ],
   "platforms": [
     "anthropic-api.md",

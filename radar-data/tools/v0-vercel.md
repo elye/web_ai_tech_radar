@@ -4,7 +4,7 @@ organization: "Vercel"
 ring: "trial"
 quadrant: "tools"
 tags: ["ui", "frontend", "generation", "react"]
-date: "2024-10-17"
+date: "2023-11-01"
 featured: false
 cost: "freemium"
 ---

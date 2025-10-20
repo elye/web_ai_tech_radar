@@ -4,7 +4,7 @@ organization: "Google"
 ring: "trial"
 quadrant: "models"
 tags: ["google", "llm", "multimodal", "long-context"]
-date: "2024-10-17"
+date: "2024-02-15"
 featured: false
 cost: "freemium"
 ---

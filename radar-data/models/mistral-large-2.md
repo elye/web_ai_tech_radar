@@ -4,7 +4,7 @@ organization: "Mistral AI"
 ring: "assess"
 quadrant: "models"
 tags: ["mistral", "llm", "european", "opensource"]
-date: "2024-10-17"
+date: "2024-07-30"
 featured: false
 cost: "paid"
 ---

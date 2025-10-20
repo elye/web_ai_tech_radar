@@ -3,8 +3,8 @@ name: "Grok"
 organization: "xAI"
 ring: "trial"
 quadrant: "models"
-tags: ["llm", "moe", "multimodal", "xai", "open-weights"]
-date: "2025-10-20"
+tags: ["llm", "moe", "multimodal", "xai", "open-weights", "reasoning"]
+date: "2024-03-15"
 featured: true
 cost: "freemium"
 draft: false

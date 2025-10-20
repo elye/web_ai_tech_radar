@@ -4,7 +4,7 @@ organization: "Open Source"
 ring: "trial"
 quadrant: "tools"
 tags: ["coding", "cli", "ai-assistant", "pairing"]
-date: "2024-10-17"
+date: "2023-03-01"
 featured: false
 cost: "free"
 ---

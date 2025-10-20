@@ -4,7 +4,7 @@ organization: "Codeium"
 ring: "assess"
 quadrant: "tools"
 tags: ["coding", "ai-editor", "agentic", "ide"]
-date: "2024-10-17"
+date: "2024-08-20"
 featured: false
 cost: "freemium"
 ---

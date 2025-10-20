@@ -4,7 +4,7 @@ organization: "Google"
 ring: "trial"
 quadrant: "platforms"
 tags: ["google", "api", "gemini", "cloud"]
-date: "2024-10-17"
+date: "2023-12-13"
 featured: false
 cost: "freemium"
 ---

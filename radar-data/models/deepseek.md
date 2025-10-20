@@ -4,7 +4,7 @@ organization: "DeepSeek"
 ring: "assess"
 quadrant: "models"
 tags: ["llm", "open-source", "reasoning", "coding"]
-date: "2025-10-17"
+date: "2024-01-10"
 featured: false
 cost: "free"
 ---

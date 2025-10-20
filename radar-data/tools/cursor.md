@@ -4,7 +4,7 @@ organization: "Cursor"
 ring: "adopt"
 quadrant: "tools"
 tags: ["ide", "coding", "editor", "ai-native"]
-date: "2024-10-17"
+date: "2023-03-15"
 featured: true
 cost: "paid"
 ---

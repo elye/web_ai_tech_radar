@@ -4,7 +4,7 @@ organization: "Open Source"
 ring: "assess"
 quadrant: "tools"
 tags: ["coding", "vscode", "claude", "agentic"]
-date: "2024-10-17"
+date: "2024-04-15"
 featured: false
 cost: "free"
 ---

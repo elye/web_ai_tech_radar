@@ -56,7 +56,9 @@ class TechnologyRadar {
         
         try {
             // Fetch the manifest file that lists all markdown files
-            const manifestResponse = await fetch('radar-data/manifest.json');
+            // Add cache-busting query parameter to ensure fresh data
+            const cacheId = Date.now();
+            const manifestResponse = await fetch(`radar-data/manifest.json?v=${cacheId}`);
             const manifest = await manifestResponse.json();
             
             // Load all markdown files from each quadrant
@@ -66,7 +68,8 @@ class TechnologyRadar {
                 // Load each markdown file
                 for (const filename of filenames) {
                     try {
-                        const fileResponse = await fetch(`radar-data/${quadrant}/${filename}`);
+                        // Add cache-busting query parameter to ensure fresh markdown files
+                        const fileResponse = await fetch(`radar-data/${quadrant}/${filename}?v=${cacheId}`);
                         const content = await fileResponse.text();
                         const tech = MarkdownParser.parse(content);
                         

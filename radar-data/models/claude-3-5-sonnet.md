@@ -4,7 +4,7 @@ organization: "Anthropic"
 ring: "adopt"
 quadrant: "models"
 tags: ["anthropic", "llm", "coding", "analysis"]
-date: "2024-10-17"
+date: "2024-06-20"
 featured: true
 cost: "paid"
 ---

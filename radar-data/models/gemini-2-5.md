@@ -4,7 +4,7 @@ organization: "Google DeepMind"
 ring: "trial"
 quadrant: "models"
 tags: ["ai", "llm", "multimodal", "google", "deepmind", "sota"]
-date: "2025-10-20"
+date: "2025-10-17"
 featured: true
 cost: "paid"
 draft: false

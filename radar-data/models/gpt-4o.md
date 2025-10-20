@@ -4,7 +4,7 @@ organization: "OpenAI"
 ring: "adopt"
 quadrant: "models"
 tags: ["openai", "llm", "multimodal", "api"]
-date: "2024-10-17"
+date: "2024-05-13"
 featured: true
 cost: "paid"
 ---

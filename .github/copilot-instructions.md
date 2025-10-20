@@ -33,12 +33,13 @@ python3 update-manifest.py && python3 -m http.server 8000
 ```yaml
 ---
 name: "Display Name"                    # Required
+organization: "Company Name"            # Required - Company or organization behind the tech
 ring: "adopt|trial|assess|hold"         # Required - recommendation level
 quadrant: "models|techniques|tools|platforms"  # Required - category
 tags: ["tag1", "tag2"]                 # Array format, used for filtering
 date: "2024-10-17"                     # ISO date format
 featured: true                         # Boolean for radar highlighting
-cost: "free|paid|freemium"             # Pricing model
+cost: "free|paid|freemium"             # Pricing model - Required
 draft: true                            # Hide from radar if true
 ---
 ```

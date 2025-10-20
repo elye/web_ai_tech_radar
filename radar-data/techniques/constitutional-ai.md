@@ -1,5 +1,6 @@
 ---
 name: "Constitutional AI"
+organization: "Anthropic"
 ring: "assess"
 quadrant: "techniques"
 tags: ["safety", "alignment", "ethics"]

@@ -1,5 +1,6 @@
 ---
 name: "LlamaIndex"
+organization: "LlamaIndex Inc."
 ring: "trial"
 quadrant: "tools"
 tags: ["framework", "rag", "data", "indexing"]

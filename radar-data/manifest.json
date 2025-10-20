@@ -3,7 +3,11 @@
     "claude-3-5-sonnet.md",
     "deepseek.md",
     "gemini-1-5-pro.md",
+    "gemini-2-5.md",
+    "gemini-nano.md",
     "gpt-4o.md",
+    "gpt-5-0-codex.md",
+    "grok.md",
     "llama-3-1.md",
     "mistral-large-2.md",
     "o1-preview.md"

@@ -1,5 +1,6 @@
 ---
 name: "LangChain"
+organization: "LangChain Inc."
 ring: "trial"
 quadrant: "tools"
 tags: ["framework", "llm", "orchestration", "python"]

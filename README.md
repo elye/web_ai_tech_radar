@@ -82,7 +82,31 @@ The radar loads all markdown files using a manifest system:
 
 ## 📝 Adding a New Technology
 
-### Method 1: Create a Markdown File (Recommended)
+### Method 1: Use the New Technology Prompt (Recommended)
+
+For the best guided experience, use the `.github/prompts/new-tech-item.prompt.md` prompt file with an AI assistant:
+
+1. Open `.github/prompts/new-tech-item.prompt.md` with your AI assistant
+2. Follow the guided checklist to enter technology details
+3. The assistant will:
+   - Ask for each required field one at a time
+   - Validate your input
+   - Generate the markdown file
+   - Run validation and manifest update automatically
+
+**Required fields** (enforced by validation):
+- **name** - Display name of the technology
+- **organization** - Company, group, or individual behind the technology
+- **ring** - adopt, trial, assess, or hold
+- **quadrant** - models, techniques, tools, or platforms
+- **cost** - free, paid, or freemium
+
+**Recommended fields:**
+- **tags** - Array of relevant tags for filtering
+- **date** - ISO date format (YYYY-MM-DD)
+- **featured** - true/false to highlight on radar
+
+### Method 2: Create a Markdown File Manually
 
 1. Copy the `TEMPLATE.md` file
 2. Save it in the appropriate quadrant folder with a descriptive filename:
@@ -96,33 +120,45 @@ The radar loads all markdown files using a manifest system:
 ```markdown
 ---
 name: "Your Technology Name"
-ring: "adopt"                    # adopt, trial, assess, or hold
-quadrant: "techniques"           # models, techniques, tools, or platforms
-tags: ["tag1", "tag2", "tag3"]   # Array of tags
-date: "2024-01-15"              # ISO date format
-featured: false                  # true for featured technologies
+organization: "Company Name"          # NEW: Organization behind the tech
+ring: "adopt"                         # adopt, trial, assess, or hold
+quadrant: "techniques"                # models, techniques, tools, or platforms
+tags: ["tag1", "tag2", "tag3"]       # Array of tags for filtering
+date: "2024-10-20"                   # ISO date format
+featured: false                       # true for featured technologies
+cost: "free"                          # free, paid, or freemium
 ---
 ```
 
 4. Write your content using standard markdown below the frontmatter
 
-5. **Update the manifest** (required for deployment):
+5. **Validate your file**:
+   ```bash
+   python3 validate.py
+   ```
+   This checks for:
+   - All required fields present
+   - Valid field values (ring, quadrant, cost)
+   - Proper markdown structure
+   - Cost field consistency between frontmatter and content
+
+6. **Update the manifest** (required for deployment):
    ```bash
    python3 update-manifest.py
    ```
 
-6. **Refresh your browser** - your new technology appears instantly! 🎉
+7. **Refresh your browser** - your new technology appears instantly! 🎉
 
-**Important**: Always run `update-manifest.py` after adding/removing files. This ensures the app works on both local servers and static hosting platforms (Cloudflare Pages, Netlify, GitHub Pages, etc.)
+**Important**: Always run validation and manifest update. Static hosts can't dynamically discover files, so the manifest must be up-to-date before deployment.
 
-### Method 2: Using the UI (Temporary Changes)
+### Method 3: Using the UI (Temporary Changes)
 
 1. Click the **⚙️ Admin Mode** button in the top navigation
 2. Click the **➕ Floating Action Button** (bottom right)
 3. Fill in the form with your technology details
 4. Click **Save**
 
-**Note:** Changes made through the UI are stored in memory only and will be lost on page refresh. For permanent changes, create markdown files as shown in Method 1.
+**Note:** Changes made through the UI are stored in memory only and will be lost on page refresh. For permanent changes, use Method 1 or 2.
 
 ## 🎨 Quadrants & Rings
 
@@ -147,11 +183,14 @@ Each technology is defined in a markdown file with YAML frontmatter:
 ```markdown
 ---
 name: "Technology Name"
+organization: "Company Name"
 ring: "adopt"
 quadrant: "techniques"
 tags: ["tag1", "tag2"]
 date: "2024-01-15"
 featured: true
+cost: "free"
+draft: false
 ---
 
 # Technology Name
@@ -171,6 +210,9 @@ Describe ideal use cases.
 - Important consideration 1
 - Limitation or challenge
 
+## Cost
+**Free** - Brief pricing description
+
 ## Recommended Tools
 List complementary tools.
 
@@ -184,6 +226,29 @@ List complementary tools.
 ## Last Updated
 2024-01-15
 ```
+
+### Frontmatter Fields Reference
+
+**Required fields** (enforced by `validate.py`):
+- `name` (string) - Display name of the technology
+- `organization` (string) - Company, group, or individual behind the technology
+- `ring` (string) - One of: `adopt`, `trial`, `assess`, `hold`
+- `quadrant` (string) - One of: `models`, `techniques`, `tools`, `platforms`
+- `cost` (string) - One of: `free`, `paid`, `freemium`
+
+**Recommended fields:**
+- `tags` (array) - Array of tags for filtering (e.g., `["ai", "ml", "nlp"]`)
+- `date` (string) - ISO date format (YYYY-MM-DD)
+- `featured` (boolean) - Set to `true` to highlight on radar
+
+**Optional fields:**
+- `draft` (boolean) - Set to `true` to hide from radar
+
+**Notes:**
+- Tags must be an array: `tags: ["ai", "ml"]` not `tags: ai, ml`
+- Date must be ISO format: `date: "2024-01-15"`
+- Booleans must be unquoted: `featured: true` (not `"true"`)
+- All field values should be properly quoted strings (except booleans and arrays)
 
 ## ⌨️ Keyboard Shortcuts
 

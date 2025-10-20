@@ -1,5 +1,6 @@
 ---
 name: "Hugging Face"
+organization: "Hugging Face"
 ring: "adopt"
 quadrant: "tools"
 tags: ["models", "transformers", "community", "hub"]

@@ -1,5 +1,6 @@
 ---
 name: "Weights & Biases"
+organization: "Weights & Biases"
 ring: "trial"
 quadrant: "tools"
 tags: ["mlops", "tracking", "experiment", "monitoring"]

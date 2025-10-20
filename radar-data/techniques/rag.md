@@ -1,5 +1,6 @@
 ---
 name: "Retrieval-Augmented Generation (RAG)"
+organization: "Academic Research"
 ring: "adopt"
 quadrant: "techniques"
 tags: ["llm", "retrieval", "generation", "nlp"]

@@ -1,5 +1,6 @@
 ---
 name: "DeepSeek"
+organization: "DeepSeek"
 ring: "assess"
 quadrant: "models"
 tags: ["llm", "open-source", "reasoning", "coding"]
@@ -8,9 +9,32 @@ featured: false
 cost: "free"
 ---
 
-## DeepSeek
 
+## Overview
 DeepSeek is an emerging AI research company from China that has gained significant attention for its competitive open-source language models. Their flagship models, particularly DeepSeek-V2 and DeepSeek Coder, demonstrate strong performance in coding tasks and general reasoning while being more efficient than many Western counterparts.
+
+## Key Benefits
+- Open-source models with commercial-friendly licenses
+- Mixture-of-Experts (MoE) architecture for efficiency
+- Strong coding and reasoning performance
+- Multilingual (English, Chinese)
+- Lower API and deployment costs
+
+## When to Use
+- When you need open weights for self-hosting or research
+- For cost-sensitive LLM deployments
+- For coding-focused applications
+- When multilingual support is required
+
+## Cost
+**Free** – Model weights are open-source and free to use. API access is available at competitive rates (see official site for details).
+
+## Resources
+- [Official website](https://www.deepseek.com/)
+- [GitHub organization](https://github.com/deepseek-ai)
+- [HuggingFace profile](https://huggingface.co/deepseek-ai)
+- [DeepSeek papers](https://huggingface.co/deepseek-ai/papers)
+- [API platform](https://platform.deepseek.com/)
 
 ### Key Features
 

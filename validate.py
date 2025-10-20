@@ -75,17 +75,20 @@ def validate_frontmatter(frontmatter: Dict, filepath: Path) -> List[str]:
     # Required fields
     if 'name' not in frontmatter or not frontmatter['name']:
         errors.append("Missing required field: 'name'")
-    
+
+    if 'organization' not in frontmatter or not frontmatter['organization']:
+        errors.append("Missing required field: 'organization'")
+
     if 'ring' not in frontmatter:
         errors.append("Missing required field: 'ring'")
     elif frontmatter['ring'].lower() not in VALID_RINGS:
         errors.append(f"Invalid ring: '{frontmatter['ring']}'. Must be one of: {', '.join(VALID_RINGS)}")
-    
+
     if 'quadrant' not in frontmatter:
         errors.append("Missing required field: 'quadrant'")
     elif frontmatter['quadrant'].lower() not in VALID_QUADRANTS:
         errors.append(f"Invalid quadrant: '{frontmatter['quadrant']}'. Must be one of: {', '.join(VALID_QUADRANTS)}")
-    
+
     # Check quadrant matches directory
     expected_quadrant = filepath.parent.name
     if 'quadrant' in frontmatter and frontmatter['quadrant'] != expected_quadrant:

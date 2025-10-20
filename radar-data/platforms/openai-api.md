@@ -1,5 +1,6 @@
 ---
 name: "OpenAI API"
+organization: "OpenAI"
 ring: "adopt"
 quadrant: "platforms"
 tags: ["api", "cloud", "llm", "gpt"]

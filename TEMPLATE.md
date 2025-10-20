@@ -1,5 +1,6 @@
 ---
 name: "Technology Name"
+organization: "Company or Organization Name"
 ring: "assess"
 quadrant: "techniques"
 tags: ["tag1", "tag2", "tag3"]
@@ -121,10 +122,11 @@ def example():
 ```yaml
 ---
 name: "string"              # Required - Display name
+organization: "string"      # Required - Company or organization behind the tech
 ring: "string"              # Required - adopt|trial|assess|hold
 quadrant: "string"          # Required - models|techniques|tools|platforms
-tags: ["string", "string"]  # Optional - Array of tags
-date: "YYYY-MM-DD"         # Optional - ISO date format
+tags: ["string", "string"]  # Recommended - Array of tags
+date: "YYYY-MM-DD"         # Recommended - ISO date format
 featured: boolean           # Optional - true|false
 cost: "string"              # Required - free|paid|freemium
 draft: boolean             # Optional - true to hide from radar

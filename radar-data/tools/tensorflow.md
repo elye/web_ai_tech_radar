@@ -1,5 +1,6 @@
 ---
 name: "TensorFlow"
+organization: "Google"
 ring: "trial"
 quadrant: "tools"
 tags: ["deep-learning", "framework", "google", "production"]

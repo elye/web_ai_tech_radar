@@ -8,12 +8,23 @@ Thank you for your interest in contributing! This document provides guidelines f
 
 The easiest and most valuable contribution is adding new AI technologies to the radar.
 
-**Steps:**
+**Recommended Method: Use the Guided Prompt**
+
+The fastest way to add a technology correctly is using the guided prompt:
+
+1. Use `.github/prompts/new-tech-item.prompt.md` with an AI assistant
+2. Follow the interactive checklist
+3. The prompt will validate and update everything automatically
+
+**Manual Method:**
+
 1. Copy `TEMPLATE.md` to the appropriate quadrant folder
-2. Fill in all sections with accurate, concise information
-3. Choose the appropriate ring based on maturity and recommendation
-4. Add 2-3 high-quality resource links
-5. Submit a pull request
+2. Fill in all required fields including `organization` and `cost`
+3. Fill in all content sections with accurate, concise information
+4. Choose the appropriate ring based on maturity and recommendation
+5. Add 2-3 high-quality resource links
+6. Run validation: `python validate.py`
+7. Submit a pull request
 
 **Quality Guidelines:**
 - Keep descriptions under 500 words
@@ -21,6 +32,7 @@ The easiest and most valuable contribution is adding new AI technologies to the 
 - Be objective - avoid marketing language
 - Include both benefits AND considerations
 - Cite authoritative sources
+- Ensure all required fields are present and accurate
 
 ### 2. Updating Existing Technologies
 
@@ -61,13 +73,30 @@ Before starting work on new features:
 ```yaml
 ---
 name: "Technology Name"           # Exact name, with proper capitalization
+organization: "Company Name"      # Company, group, or individual behind the tech
 ring: "adopt"                     # adopt, trial, assess, or hold
 quadrant: "techniques"            # matches folder name
 tags: ["tag1", "tag2"]           # At least 2 relevant tags
 date: "2024-10-17"               # ISO format YYYY-MM-DD
 featured: false                   # true only for exceptional technologies
+cost: "free"                      # free, paid, or freemium
 ---
 ```
+
+### Important Notes on Required Fields
+
+- **organization**: This field is **required**. It identifies the company, organization, or individual behind the technology. Examples:
+  - `"OpenAI"` for GPT-4
+  - `"Google"` for Gemini
+  - `"Meta"` for Llama
+  - `"Anthropic"` for Claude
+  - `"University of X"` for research projects
+  - `"Community Project"` for open source without a company
+
+- **cost**: This field is **required**. Valid values are:
+  - `"free"` - Open source or no-cost service
+  - `"paid"` - Commercial product with paid-only pricing
+  - `"freemium"` - Free tier with paid options
 
 ### Content Structure
 

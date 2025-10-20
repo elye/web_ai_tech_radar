@@ -1,5 +1,6 @@
 ---
 name: "AWS Bedrock"
+organization: "Amazon Web Services"
 ring: "trial"
 quadrant: "platforms"
 tags: ["aws", "cloud", "llm", "serverless"]

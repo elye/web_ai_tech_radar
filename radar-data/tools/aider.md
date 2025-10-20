@@ -1,5 +1,6 @@
 ---
 name: "Aider"
+organization: "Open Source"
 ring: "trial"
 quadrant: "tools"
 tags: ["coding", "cli", "ai-assistant", "pairing"]

@@ -1,5 +1,6 @@
 ---
 name: "Agentic Workflows"
+organization: "Academic Research"
 ring: "assess"
 quadrant: "techniques"
 tags: ["agents", "autonomous", "reasoning", "tools"]

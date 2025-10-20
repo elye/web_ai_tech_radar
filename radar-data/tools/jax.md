@@ -1,5 +1,6 @@
 ---
 name: "JAX"
+organization: "Google"
 ring: "assess"
 quadrant: "tools"
 tags: ["deep-learning", "framework", "google", "research"]

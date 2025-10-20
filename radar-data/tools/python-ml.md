@@ -1,5 +1,6 @@
 ---
 name: "Python for ML"
+organization: "Python Software Foundation"
 ring: "adopt"
 quadrant: "tools"
 tags: ["python", "language", "ml", "ecosystem"]

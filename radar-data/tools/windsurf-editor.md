@@ -1,5 +1,6 @@
 ---
 name: "Windsurf Editor"
+organization: "Codeium"
 ring: "assess"
 quadrant: "tools"
 tags: ["coding", "ai-editor", "agentic", "ide"]

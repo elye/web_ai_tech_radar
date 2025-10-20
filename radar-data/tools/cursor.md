@@ -1,5 +1,6 @@
 ---
 name: "Cursor"
+organization: "Cursor"
 ring: "adopt"
 quadrant: "tools"
 tags: ["ide", "coding", "editor", "ai-native"]

@@ -1,5 +1,6 @@
 ---
 name: "Prompt Engineering"
+organization: "Academic Research"
 ring: "adopt"
 quadrant: "techniques"
 tags: ["llm", "prompting", "optimization"]

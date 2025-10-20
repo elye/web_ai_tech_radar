@@ -1,5 +1,6 @@
 ---
 name: "Semantic Kernel"
+organization: "Microsoft"
 ring: "trial"
 quadrant: "tools"
 tags: ["microsoft", "orchestration", "dotnet", "enterprise"]

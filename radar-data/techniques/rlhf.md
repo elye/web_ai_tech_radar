@@ -1,5 +1,6 @@
 ---
 name: "RLHF (Reinforcement Learning from Human Feedback)"
+organization: "Academic Research"
 ring: "trial"
 quadrant: "techniques"
 tags: ["training", "alignment", "feedback"]

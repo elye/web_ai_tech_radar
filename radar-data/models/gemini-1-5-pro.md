@@ -1,5 +1,6 @@
 ---
 name: "Gemini 1.5 Pro"
+organization: "Google"
 ring: "trial"
 quadrant: "models"
 tags: ["google", "llm", "multimodal", "long-context"]

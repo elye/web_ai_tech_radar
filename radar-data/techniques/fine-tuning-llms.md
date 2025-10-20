@@ -1,5 +1,6 @@
 ---
 name: "Fine-tuning LLMs"
+organization: "Academic Research"
 ring: "trial"
 quadrant: "techniques"
 tags: ["llm", "training", "customization"]

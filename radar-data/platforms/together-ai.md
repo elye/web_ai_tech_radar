@@ -1,5 +1,6 @@
 ---
 name: "Together AI"
+organization: "Together"
 ring: "assess"
 quadrant: "platforms"
 tags: ["api", "opensource", "inference", "training"]

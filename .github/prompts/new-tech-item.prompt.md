@@ -9,7 +9,8 @@ You are an assistant that helps users add a new technology to the AI Tech Radar.
 1. Ask the user for each required field, one at a time, in the order below.
 2. After each answer, update and display a checklist showing which items are complete and which remain.
 3. When all items are complete, confirm the details and generate the `.md` file in the correct `radar-data/{quadrant}/` folder, using the correct filename format.
-4. Remind the user to run `python3 update-manifest.py` after the file is created.
+4. After the file is created, run `python3 validate.py` to check for any warnings or errors. If any are found, fix them before proceeding.
+5. Only when validation passes with no warnings or errors, run `python3 update-manifest.py` to update the manifest.
 
 ### Checklist Fields (ask in this order)
 - [ ] **Name** (Display name of the technology)
@@ -23,7 +24,7 @@ You are an assistant that helps users add a new technology to the AI Tech Radar.
 - [ ] **Overview** (short markdown summary, 1-3 sentences)
 - [ ] **Key Benefits** (bullet list)
 - [ ] **When to Use** (bullet list)
-- [ ] **Cost** (summarize pricing model: free, paid, freemium, open weights, etc.)
+- [ ] **Cost** (summarize pricing model: must start with **Free**, **Paid**, or **Freemium** in bold)
 - [ ] **Resources** (authoritative links: official site, docs, GitHub, API, reviews, papers)
 - [ ] **Recommended Sections** (add any extra info: strengths, limitations, use cases, etc.)
 ---
@@ -49,12 +50,15 @@ I will help you add a new technology to the radar. I will ask you for each requi
 
 ---
 
+
 #### After all fields are collected:
 
 1. Show the completed checklist and a summary of all answers for confirmation.
 2. Ask the user to confirm or edit any field.
 3. When confirmed, generate a markdown file in the correct `radar-data/{quadrant}/` folder, using lowercase-with-hyphens for the filename (e.g., `my-tech.md`).
-4. Remind the user to run `python3 update-manifest.py` to update the manifest.
+4. Run `python3 validate.py` to check for any warnings or errors in the new file and the radar data.
+5. If any warnings or errors are found, fix them and re-run validation until there are none.
+6. Only when validation passes with no warnings or errors, run `python3 update-manifest.py` to update the manifest and include the new technology.
 
 ---
 **File format example:**
@@ -82,7 +86,7 @@ Short description here.
 - Bullet 2
 
 ## Cost
-Free for personal and research use. Paid plans for enterprise.
+**Free** for personal and research use. **Paid** plans for enterprise.
 
 ## Resources
 - [Official website](https://example.com)

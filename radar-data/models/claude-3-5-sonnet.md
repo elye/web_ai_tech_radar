@@ -1,11 +1,11 @@
 ---
 name: "Claude 3.5 Sonnet"
 organization: "Anthropic"
-ring: "adopt"
+ring: "hold"
 quadrant: "models"
-tags: ["anthropic", "llm", "coding", "analysis"]
+tags: ["llm", "reasoning", "coding"]
 date: "2024-06-20"
-featured: true
+featured: false
 cost: "paid"
 ---
 

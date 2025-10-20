@@ -4,7 +4,7 @@ organization: "Google"
 ring: "trial"
 quadrant: "models"
 tags: ["ai", "llm", "on-device", "google", "multimodal", "mobile"]
-date: "2024-12-19"
+date: "2023-12-06"
 featured: true
 cost: "free"
 draft: false

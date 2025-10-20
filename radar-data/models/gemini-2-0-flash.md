@@ -1,17 +1,17 @@
 ---
-name: "Gemini 2.5"
+name: "Gemini 2.0 Flash"
 organization: "Google DeepMind"
-ring: "trial"
+ring: "hold"
 quadrant: "models"
-tags: ["ai", "llm", "multimodal", "google", "deepmind", "sota"]
-date: "2025-10-17"
-featured: true
-cost: "paid"
+tags: ["ai", "llm", "multimodal", "google", "deepmind", "fast"]
+date: "2024-12-11"
+featured: false
+cost: "freemium"
 draft: false
 ---
 
 ## Overview
-Gemini 2.5 is Google's latest state-of-the-art large language model, offering advanced multimodal reasoning, long context windows, and strong performance across a wide range of academic and industry benchmarks.
+Gemini 2.0 Flash is Google's latest multimodal AI model, designed for speed and efficiency. It's the first model in the Gemini 2.0 family, offering twice the speed of 1.5 Pro while delivering improved performance across text, vision, and audio tasks.
 
 ## Key Benefits
 - Native multimodal support (text, image, audio, video)
@@ -27,7 +27,7 @@ Gemini 2.5 is Google's latest state-of-the-art large language model, offering ad
 - Scenarios where long context and step-by-step reasoning are critical
 
 ## Cost
-**Paid**: Usage is billed per token via Google AI Studio and Vertex AI. Pricing varies by model size and usage volume. See official documentation for details.
+**Freemium**: Free tier available via Google AI Studio with generous rate limits. Paid tier (Vertex AI) offers production-grade SLAs and higher throughput. Pricing varies by usage volume. See official documentation for details.
 
 ## Resources
 - [Official Gemini page](https://deepmind.google/technologies/gemini/)

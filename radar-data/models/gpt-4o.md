@@ -1,11 +1,11 @@
 ---
 name: "GPT-4o"
 organization: "OpenAI"
-ring: "adopt"
+ring: "hold"
 quadrant: "models"
-tags: ["openai", "llm", "multimodal", "api"]
+tags: ["llm", "multimodal", "fast"]
 date: "2024-05-13"
-featured: true
+featured: false
 cost: "paid"
 ---
 

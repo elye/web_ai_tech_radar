@@ -8,9 +8,36 @@ featured: true
 cost: "free"
 ---
 
-## Ollama
 
-Ollama is a lightweight, open-source application that makes it incredibly easy to run large language models locally on your machine. Think of it as "Docker for LLMs" - it provides a simple command-line interface to download, run, and manage AI models without complex setup or cloud dependencies.
+## Overview
+Ollama is a lightweight, open-source application that makes it incredibly easy to run large language models locally on your machine. Think of it as "Docker for LLMs"—it provides a simple command-line interface to download, run, and manage AI models without complex setup or cloud dependencies.
+
+## Key Benefits
+- One-command setup for running LLMs locally
+- Full data privacy—no cloud required
+- Hardware-aware acceleration (CPU, GPU, Apple Silicon)
+- OpenAI-compatible REST API for integration
+- No ongoing API costs or subscriptions
+
+## When to Use
+- When privacy and data sovereignty are required
+- For offline or air-gapped development
+- To avoid cloud API costs for high-volume use
+- For rapid prototyping and local testing
+- When you want to experiment with a variety of open-source models
+
+## Cost
+**Free** – Ollama is open-source and free to use. There are no API fees or subscriptions. Hardware costs and electricity usage apply for local inference.
+
+
+## Resources
+ - [Official website](https://ollama.com/)
+ - [GitHub repository](https://github.com/ollama/ollama)
+ - [Documentation](https://docs.ollama.com/)
+ - [Model library](https://ollama.com/library)
+ - [API reference](https://github.com/ollama/ollama/blob/main/docs/api.md)
+ - [Community integrations](https://github.com/ollama/ollama#community-integrations)
+ - [Discord community](https://discord.com/invite/ollama)
 
 ### Key Features
 

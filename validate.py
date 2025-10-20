@@ -158,7 +158,7 @@ def validate_content(content: str, frontmatter_cost: str = None) -> Tuple[List[s
     
     # Check for resources
     if '## Resources' not in content or '[' not in content:
-        warnings.append("No resource links found")
+        warnings.append("No resources found")
     
     return warnings, errors
 

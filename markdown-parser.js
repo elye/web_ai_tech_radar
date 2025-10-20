@@ -191,12 +191,12 @@ class MarkdownParser {
     static extractSearchText(tech) {
         const parts = [
             tech.name,
+            tech.organization,
             tech.quadrant,
             tech.ring,
             ...(tech.tags || []),
             tech.rawContent || ''
         ];
-        
         return parts.join(' ').toLowerCase();
     }
     

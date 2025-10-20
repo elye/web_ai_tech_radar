@@ -505,20 +505,22 @@ class TechnologyRadar {
         
         title.textContent = tech.name;
         
-        // Build metadata badges
+
+        // Build metadata badges, now including organization
         const costIcon = tech.cost === 'free' ? '💚' : tech.cost === 'freemium' ? '💙' : '💰';
         const costLabel = tech.cost ? tech.cost.charAt(0).toUpperCase() + tech.cost.slice(1) : 'Unknown';
         const metadata = `
             <div class="tech-metadata">
                 <span class="tech-badge badge-ring ${tech.ring}">${tech.ring.toUpperCase()}</span>
                 <span class="tech-badge badge-tag">${this.formatQuadrant(tech.quadrant)}</span>
+                ${tech.organization ? `<span class="tech-badge badge-organization">🏢 ${tech.organization}</span>` : ''}
                 ${tech.cost ? `<span class="tech-badge badge-cost badge-cost-${tech.cost}">${costIcon} ${costLabel}</span>` : ''}
                 ${tech.featured ? '<span class="tech-badge badge-featured">⭐ Featured</span>' : ''}
                 <span class="tech-badge badge-date">📅 ${tech.date}</span>
                 ${tech.tags.map(tag => `<span class="tech-badge badge-tag">#${tag}</span>`).join('')}
             </div>
         `;
-        
+
         content.innerHTML = metadata + tech.content;
         
         panel.classList.remove('collapsed');

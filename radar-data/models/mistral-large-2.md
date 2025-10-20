@@ -1,5 +1,6 @@
 ---
 name: "Mistral Large 2"
+organization: "Mistral AI"
 ring: "assess"
 quadrant: "models"
 tags: ["mistral", "llm", "european", "opensource"]

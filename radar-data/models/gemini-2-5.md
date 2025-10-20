@@ -1,5 +1,6 @@
 ---
 name: "Gemini 2.5"
+organization: "Google DeepMind"
 ring: "trial"
 quadrant: "models"
 tags: ["ai", "llm", "multimodal", "google", "deepmind", "sota"]

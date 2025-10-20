@@ -1,5 +1,6 @@
 ---
 name: "Grok"
+organization: "xAI"
 ring: "trial"
 quadrant: "models"
 tags: ["llm", "moe", "multimodal", "xai", "open-weights"]

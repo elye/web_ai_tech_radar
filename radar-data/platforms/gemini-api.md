@@ -1,5 +1,6 @@
 ---
 name: "Google Gemini API"
+organization: "Google"
 ring: "trial"
 quadrant: "platforms"
 tags: ["google", "api", "gemini", "cloud"]

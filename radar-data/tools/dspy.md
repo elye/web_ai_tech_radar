@@ -1,5 +1,6 @@
 ---
 name: "DSPy"
+organization: "Stanford"
 ring: "assess"
 quadrant: "tools"
 tags: ["framework", "prompting", "optimization", "research"]

@@ -24,6 +24,7 @@ class MarkdownParser {
         // Create technology object
         const technology = {
             name: frontmatter.name || 'Untitled',
+            organization: frontmatter.organization || '',
             ring: (frontmatter.ring || 'assess').toLowerCase(),
             quadrant: (frontmatter.quadrant || 'techniques').toLowerCase(),
             tags: this.parseTags(frontmatter.tags),
@@ -35,7 +36,7 @@ class MarkdownParser {
             rawContent: body,
             frontmatter: frontmatter
         };
-        
+
         return technology;
     }
     

@@ -1,5 +1,6 @@
 ---
 name: "Claude 3.5 Sonnet"
+organization: "Anthropic"
 ring: "adopt"
 quadrant: "models"
 tags: ["anthropic", "llm", "coding", "analysis"]

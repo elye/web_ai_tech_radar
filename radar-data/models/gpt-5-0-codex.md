@@ -1,5 +1,6 @@
 ---
 name: "GPT-5.0 Codex"
+organization: "OpenAI"
 ring: "assess"
 quadrant: "models"
 tags: ["ai", "ml", "nlp", "code", "generative"]

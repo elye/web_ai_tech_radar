@@ -1,5 +1,6 @@
 ---
 name: "Mixture of Experts (MoE)"
+organization: "Academic Research"
 ring: "assess"
 quadrant: "techniques"
 tags: ["architecture", "scaling", "efficiency"]

@@ -1,5 +1,6 @@
 ---
 name: "Multi-modal AI"
+organization: "Academic Research"
 ring: "trial"
 quadrant: "techniques"
 tags: ["vision", "audio", "multimodal", "gpt4"]

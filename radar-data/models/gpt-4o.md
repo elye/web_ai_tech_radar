@@ -1,5 +1,6 @@
 ---
 name: "GPT-4o"
+organization: "OpenAI"
 ring: "adopt"
 quadrant: "models"
 tags: ["openai", "llm", "multimodal", "api"]

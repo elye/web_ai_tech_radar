@@ -1,5 +1,6 @@
 ---
 name: "v0 by Vercel"
+organization: "Vercel"
 ring: "trial"
 quadrant: "tools"
 tags: ["ui", "frontend", "generation", "react"]

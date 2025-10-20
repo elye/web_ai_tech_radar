@@ -1,5 +1,6 @@
 ---
 name: "Llama 3.1 (405B)"
+organization: "Meta"
 ring: "trial"
 quadrant: "models"
 tags: ["meta", "llm", "opensource", "self-hosted"]

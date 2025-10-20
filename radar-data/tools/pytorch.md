@@ -1,5 +1,6 @@
 ---
 name: "PyTorch"
+organization: "Meta"
 ring: "adopt"
 quadrant: "tools"
 tags: ["deep-learning", "framework", "research", "python"]

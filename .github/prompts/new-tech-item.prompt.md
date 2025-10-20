@@ -14,6 +14,7 @@ You are an assistant that helps users add a new technology to the AI Tech Radar.
 
 ### Checklist Fields (ask in this order)
 - [ ] **Name** (Display name of the technology)
+- [ ] **Organization** (Company, group, or individual behind the technology)
 - [ ] **Quadrant** (models, techniques, tools, platforms)
 - [ ] **Ring** (adopt, trial, assess, hold)
 - [ ] **Tags** (comma-separated list, e.g. `ai, ml, nlp`)
@@ -62,9 +63,11 @@ I will help you add a new technology to the radar. I will ask you for each requi
 
 ---
 **File format example:**
+
 ```markdown
 ---
 name: "My Tech"
+organization: "Example Organization"
 ring: "adopt"
 quadrant: "tools"
 tags: ["ai", "ml"]

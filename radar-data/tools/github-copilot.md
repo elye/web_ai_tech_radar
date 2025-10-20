@@ -1,5 +1,6 @@
 ---
 name: "GitHub Copilot"
+organization: "GitHub (Microsoft)"
 ring: "adopt"
 quadrant: "tools"
 tags: ["coding", "ide", "assistant", "productivity"]

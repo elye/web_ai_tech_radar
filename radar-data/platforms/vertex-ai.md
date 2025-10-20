@@ -1,5 +1,6 @@
 ---
 name: "Google Vertex AI"
+organization: "Google"
 ring: "trial"
 quadrant: "platforms"
 tags: ["google", "cloud", "ml", "gemini"]

@@ -1,5 +1,6 @@
 ---
 name: "Gemini Nano"
+organization: "Google"
 ring: "trial"
 quadrant: "models"
 tags: ["ai", "llm", "on-device", "google", "multimodal", "mobile"]

@@ -344,6 +344,21 @@
     border: 1px solid var(--border-color);
 }
 
+.badge-organization {
+    display: inline-block !important;
+    background: #4A90E2 !important;
+    color: white !important;
+    border: none !important;
+    padding: 0.4rem 0.9rem !important;
+    border-radius: 12px !important;
+    font-weight: 700 !important;
+}
+
+[data-theme="dark"] .badge-organization {
+    background: #2E5C8A !important;
+    color: #E0E0E0 !important;
+}
+
 .badge-featured {
     background: gold;
     color: #000;

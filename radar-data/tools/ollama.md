@@ -1,5 +1,6 @@
 ---
 name: "Ollama"
+organization: "Open Source"
 ring: "adopt"
 quadrant: "tools"
 tags: ["llm", "open-source", "local-deployment", "docker"]

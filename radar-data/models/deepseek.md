@@ -1,5 +1,6 @@
 ---
 name: "DeepSeek"
+organization: "DeepSeek"
 ring: "assess"
 quadrant: "models"
 tags: ["llm", "open-source", "reasoning", "coding"]

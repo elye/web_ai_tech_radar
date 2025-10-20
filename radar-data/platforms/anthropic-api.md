@@ -1,5 +1,6 @@
 ---
 name: "Anthropic API"
+organization: "Anthropic"
 ring: "adopt"
 quadrant: "platforms"
 tags: ["api", "claude", "llm", "safety"]

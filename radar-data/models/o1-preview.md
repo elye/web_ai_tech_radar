@@ -1,5 +1,6 @@
 ---
 name: "OpenAI o1-preview"
+organization: "OpenAI"
 ring: "assess"
 quadrant: "models"
 tags: ["openai", "reasoning", "llm", "research"]

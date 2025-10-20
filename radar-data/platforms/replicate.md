@@ -1,5 +1,6 @@
 ---
 name: "Replicate"
+organization: "Replicate Inc."
 ring: "trial"
 quadrant: "platforms"
 tags: ["api", "models", "hosting", "inference"]

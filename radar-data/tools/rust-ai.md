@@ -1,5 +1,6 @@
 ---
 name: "Rust for AI"
+organization: "Rust Foundation"
 ring: "assess"
 quadrant: "tools"
 tags: ["rust", "performance", "systems", "safety"]

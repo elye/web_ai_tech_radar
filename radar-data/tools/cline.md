@@ -1,5 +1,6 @@
 ---
 name: "Cline (VS Code)"
+organization: "Open Source"
 ring: "assess"
 quadrant: "tools"
 tags: ["coding", "vscode", "claude", "agentic"]

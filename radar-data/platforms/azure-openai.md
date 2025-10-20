@@ -1,5 +1,6 @@
 ---
 name: "Azure OpenAI"
+organization: "Microsoft"
 ring: "adopt"
 quadrant: "platforms"
 tags: ["azure", "microsoft", "cloud", "enterprise"]

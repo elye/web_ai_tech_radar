@@ -1,5 +1,6 @@
 {
   "models": [
+    "chatgpt-5-1-codex-max.md",
     "claude-3-5-sonnet.md",
     "claude-4-5-haiku.md",
     "claude-4-5-sonnet.md",
@@ -7,6 +8,7 @@
     "gemini-1-5-pro.md",
     "gemini-2-0-flash.md",
     "gemini-2-5-pro.md",
+    "gemini-3-pro.md",
     "gemini-nano.md",
     "gpt-4o.md",
     "gpt-5.md",
@@ -14,9 +16,11 @@
     "llama-3-1.md",
     "llama-3-2.md",
     "mistral-large-2.md",
+    "nano-banana-pro.md",
     "nano-banana.md",
     "o1-preview.md",
-    "o1.md"
+    "o1.md",
+    "perplexity-sonar-pro.md"
   ],
   "platforms": [
     "anthropic-api.md",
@@ -40,9 +44,13 @@
   ],
   "tools": [
     "aider.md",
+    "antigravity.md",
+    "claude-cli.md",
+    "claude-code.md",
     "cline.md",
     "cursor.md",
     "dspy.md",
+    "gemini-cli.md",
     "github-copilot.md",
     "huggingface.md",
     "jax.md",
@@ -56,6 +64,7 @@
     "semantic-kernel.md",
     "tensorflow.md",
     "v0-vercel.md",
+    "vscode.md",
     "weights-and-biases.md",
     "windsurf-editor.md"
   ]

@@ -12,25 +12,20 @@ cost: "paid"
 # Cursor
 
 ## Overview
-The leading AI-first code editor built on VS Code. Cursor has rapidly become the preferred choice for AI-assisted development with its Composer feature for multi-file editing, advanced codebase understanding, and seamless integration of multiple LLMs.
+Cursor is an AI-first code editor built on VS Code that has transformed into a comprehensive agentic development platform in 2025. With the introduction of its native "Composer" model and "Background Agents", it offers a highly autonomous coding experience.
 
-## Key Benefits
-- Best-in-class AI code completion (Tab)
-- Composer for complex multi-file edits
-- Deep codebase indexing and understanding
-- Inline AI chat (Cmd+K)
-- Works with GPT-4o, Claude 3.5 Sonnet, o1-preview
-- Full VS Code compatibility and extensions
-- Privacy modes and local models support
-- Fast and responsive interface
+## Key Features
+- **Composer Model:** Native frontier model trained for coding, 4x faster than competitors.
+- **Background Agents:** Run long-running tasks (refactors, tests) in parallel without blocking.
+- **Max Mode:** Access to top models (o3, Claude 3.5, Gemini 2.5) for complex reasoning.
+- **AI Code Reviews:** Automated bug detection and fix suggestions directly in the editor.
+- **Instant Grep:** Instantaneous codebase search using AI.
+- **Privacy Mode:** "Local mode" ensures code never leaves your machine.
 
 ## When to Use
-- Professional software development with AI assistance
-- Complex refactoring across multiple files
-- Rapid prototyping and scaffolding
-- Learning new codebases quickly
-- Teams wanting best AI coding experience
-- Any project where developer velocity matters
+- Developers wanting the most advanced AI-integrated coding experience.
+- Complex refactoring and "agentic" workflows.
+- Teams needing shared prompts and project-specific context.
 
 ## Considerations
 - Subscription required ($20/month Pro)

@@ -164,9 +164,9 @@ cost: "free"                          # free, paid, or freemium
 
 ### Quadrants (What type of technology?)
 
-- **Models** (Top Right) - LLMs and AI models (GPT-4, Claude, Llama, Gemini)
+- **Models** (Top Right) - LLMs and AI models (Gemini 3 Pro, ChatGPT 5.1, Nano Banana Pro, Perplexity)
 - **Techniques** (Top Left) - Methods, practices, and approaches (RAG, Fine-tuning, Prompt Engineering)
-- **Tools** (Bottom Left) - Development tools, frameworks, and libraries (LangChain, PyTorch, LlamaIndex)
+- **Tools** (Bottom Left) - Development tools, frameworks, and libraries (AntiGravity, Claude Code, Cursor, Gemini CLI)
 - **Platforms** (Bottom Right) - Cloud services, APIs, and infrastructure (OpenAI API, AWS Bedrock)
 
 ### Rings (What's our recommendation?)

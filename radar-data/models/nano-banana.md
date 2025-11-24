@@ -1,7 +1,7 @@
 ---
 name: "Nano Banana (Gemini Image Editing)"
 organization: "Google DeepMind"
-ring: "trial"
+ring: "hold"
 quadrant: "models"
 tags: ["image-generation", "image-editing", "multimodal"]
 date: "2025-08-26"

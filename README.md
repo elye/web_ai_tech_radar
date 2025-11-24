@@ -166,7 +166,7 @@ cost: "free"                          # free, paid, or freemium
 
 - **Models** (Top Right) - LLMs and AI models (Gemini 3 Pro, ChatGPT 5.1, Nano Banana Pro, Perplexity)
 - **Techniques** (Top Left) - Methods, practices, and approaches (RAG, Fine-tuning, Prompt Engineering)
-- **Tools** (Bottom Left) - Development tools, frameworks, and libraries (AntiGravity, Claude Code, Cursor, Gemini CLI)
+- **Tools** (Bottom Left) - Development tools, frameworks, and libraries (Bolt, Lovable, Replit, Cursor, Windsurf)
 - **Platforms** (Bottom Right) - Cloud services, APIs, and infrastructure (OpenAI API, AWS Bedrock)
 
 ### Rings (What's our recommendation?)

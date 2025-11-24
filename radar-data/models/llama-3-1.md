@@ -1,7 +1,7 @@
 ---
 name: "Llama 3.1 (405B)"
 organization: "Meta"
-ring: "trial"
+ring: "hold"
 quadrant: "models"
 tags: ["meta", "llm", "opensource", "self-hosted"]
 date: "2024-07-23"

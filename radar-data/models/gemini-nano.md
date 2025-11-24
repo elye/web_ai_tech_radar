@@ -1,7 +1,7 @@
 ---
 name: "Gemini Nano"
 organization: "Google"
-ring: "trial"
+ring: "hold"
 quadrant: "models"
 tags: ["ai", "llm", "on-device", "google", "multimodal", "mobile"]
 date: "2023-12-06"

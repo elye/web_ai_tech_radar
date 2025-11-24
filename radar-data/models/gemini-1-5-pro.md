@@ -1,7 +1,7 @@
 ---
 name: "Gemini 1.5 Pro"
 organization: "Google"
-ring: "trial"
+ring: "hold"
 quadrant: "models"
 tags: ["google", "llm", "multimodal", "long-context"]
 date: "2024-02-15"

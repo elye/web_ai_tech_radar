@@ -6,7 +6,7 @@ quadrant: "tools"
 tags: ["anthropic", "cli", "utility"]
 date: "2025-01-01"
 featured: false
-cost: "free"
+cost: "freemium"
 ---
 
 # Claude CLI
@@ -25,7 +25,7 @@ The Claude CLI provides a command-line interface for interacting with Anthropic'
 - Users who want direct model access without the full agentic wrapper of Claude Code.
 
 ## Cost
-**Free/Paid** - Tool is free, usage depends on API key/subscription.
+**Freemium** - Tool is free, usage depends on API key/subscription.
 
 ## Status
 **Ring: ASSESS** - A useful utility for power users to integrate LLMs into their terminal workflows.

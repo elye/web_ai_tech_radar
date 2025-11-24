@@ -1,7 +1,7 @@
 ---
 name: "Grok"
 organization: "xAI"
-ring: "trial"
+ring: "hold"
 quadrant: "models"
 tags: ["llm", "moe", "multimodal", "xai", "open-weights", "reasoning"]
 date: "2024-03-15"

@@ -164,10 +164,10 @@ cost: "free"                          # free, paid, or freemium
 
 ### Quadrants (What type of technology?)
 
-- **Models** (Top Right) - LLMs and AI models (Gemini 3 Pro, ChatGPT 5.1, Nano Banana Pro, Perplexity)
+- **Models** (Top Right) - LLMs and AI models (Gemini 3 Pro, ChatGPT 5.1, Claude 4.5 Sonnet, Perplexity Sonar Pro)
 - **Techniques** (Top Left) - Methods, practices, and approaches (RAG, Fine-tuning, Prompt Engineering)
-- **Tools** (Bottom Left) - Development tools, frameworks, and libraries (Bolt, Lovable, Replit, Cursor, Windsurf)
-- **Platforms** (Bottom Right) - Cloud services, APIs, and infrastructure (OpenAI API, AWS Bedrock)
+- **Tools** (Bottom Left) - Development tools, frameworks, and libraries (OpenAI Atlas, Warp, Snyk, Bolt, Lovable)
+- **Platforms** (Bottom Right) - Cloud services, APIs, and infrastructure (Google Search AI Mode, OpenAI Agents SDK, AWS Bedrock)
 
 ### Rings (What's our recommendation?)
 

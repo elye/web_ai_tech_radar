@@ -1,7 +1,7 @@
 ---
 name: "Mistral Large 2"
 organization: "Mistral AI"
-ring: "assess"
+ring: "hold"
 quadrant: "models"
 tags: ["mistral", "llm", "european", "opensource"]
 date: "2024-07-30"

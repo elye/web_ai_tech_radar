@@ -28,5 +28,9 @@ Codeium is a high-performance, free AI coding assistant that rivals GitHub Copil
 ## Cost
 **Free** for individuals; paid for teams and enterprise.
 
+## Resources
+- [Codeium Website](https://codeium.com/)
+- [Codeium Blog](https://codeium.com/blog)
+
 ## Status
 **Ring: TRIAL** - A leading free alternative that delivers exceptional performance and broad compatibility.

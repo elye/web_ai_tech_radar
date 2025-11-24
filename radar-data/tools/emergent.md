@@ -24,5 +24,8 @@ Emergent is a new entrant in the vibe coding space, focused on leveraging AI to 
 ## Cost
 **Freemium** - Check website for latest pricing.
 
+## Resources
+- [Emergent Website](https://emergent.sh/)
+
 ## Status
 **Ring: ASSESS** - One to watch in the rapidly evolving vibe coding landscape.

@@ -28,5 +28,9 @@ Qodo focuses on code integrity and quality. Unlike general-purpose assistants, Q
 ## Cost
 **Freemium** - Free for individuals; paid for teams/enterprise.
 
+## Resources
+- [Qodo Website](https://qodo.ai/)
+- [CodiumAI Blog](https://www.codium.ai/blog/)
+
 ## Status
 **Ring: ASSESS** - A niche but critical tool for quality assurance in the AI coding era.

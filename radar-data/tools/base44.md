@@ -26,5 +26,9 @@ Base44, acquired by Wix, is a vibe coding tool that offers an integrated backend
 ## Cost
 **Paid** - Pricing details vary, integrated with Wix ecosystem.
 
+## Resources
+- [Wix Velo](https://www.wix.com/velo)
+- [Base44 (Wix)](https://www.wix.com/)
+
 ## Status
 **Ring: ASSESS** - A promising tool for rapid full-stack development, especially for those in the Wix ecosystem.

@@ -14,7 +14,7 @@ cost: "freemium"
 ## Overview
 The Claude CLI provides a command-line interface for interacting with Anthropic's Claude models. While often used in conjunction with "Claude Code", the base CLI offers direct access to the model for piping text, quick queries, and scripting.
 
-## Key Features
+## Key Benefits
 - **Direct Access:** Pipe content to Claude directly from the terminal.
 - **Scripting:** Easily integrate LLM capabilities into shell scripts.
 - **Simple Interface:** Lightweight and focused on text processing.
@@ -26,6 +26,10 @@ The Claude CLI provides a command-line interface for interacting with Anthropic'
 
 ## Cost
 **Freemium** - Tool is free, usage depends on API key/subscription.
+
+## Resources
+- [Anthropic Documentation](https://docs.anthropic.com/)
+- [Claude CLI GitHub](https://github.com/anthropic/claude-cli)
 
 ## Status
 **Ring: ASSESS** - A useful utility for power users to integrate LLMs into their terminal workflows.

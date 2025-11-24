@@ -26,5 +26,8 @@ MemX (MEX) is a vibe coding tool that stands out for its language agnosticism. U
 ## Cost
 **Paid** - Subscription based.
 
+## Resources
+- [MemX Website](https://memx.ai/)
+
 ## Status
 **Ring: ASSESS** - A valuable tool for developers working outside the standard JS/React stack.

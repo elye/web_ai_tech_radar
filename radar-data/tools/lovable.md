@@ -27,5 +27,9 @@ Lovable bridges the gap between no-code and pro development. It is an AI-powered
 ## Cost
 **Paid** - Subscription based with AI agent limits.
 
+## Resources
+- [Lovable Website](https://lovable.dev/)
+- [Lovable Docs](https://docs.lovable.dev/)
+
 ## Status
 **Ring: ASSESS** - A strong contender for "no-code to pro-code" workflows.

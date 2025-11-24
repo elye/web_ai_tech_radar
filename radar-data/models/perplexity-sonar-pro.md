@@ -29,5 +29,9 @@ Sonar Pro is Perplexity's advanced in-house model, built on Llama 3.1 70B. It is
 ## Cost
 **Paid** - Available with Perplexity Pro subscription and API.
 
+## Resources
+- [Perplexity AI](https://www.perplexity.ai/)
+- [Perplexity Blog](https://blog.perplexity.ai/)
+
 ## Status
 **Ring: ASSESS** - A strong contender for research-heavy tasks, offering a unique blend of LLM reasoning and search engine breadth.

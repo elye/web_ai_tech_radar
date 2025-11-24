@@ -30,5 +30,9 @@ Gemini 3 Pro is Google's most intelligent model to date, released in preview in 
 ## Cost
 **Paid** - Available via Gemini Advanced, AI Studio, and Vertex AI.
 
+## Resources
+- [Google DeepMind](https://deepmind.google/technologies/gemini/)
+- [Gemini API Docs](https://ai.google.dev/)
+
 ## Status
 **Ring: TRIAL** - The latest frontier model from Google, setting new standards for reasoning and agentic workflows.

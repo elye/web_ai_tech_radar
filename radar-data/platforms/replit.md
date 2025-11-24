@@ -29,5 +29,9 @@ Replit is a collaborative, cloud-based IDE that has integrated powerful AI featu
 ## Cost
 **Freemium** - Free tier available; paid plans for advanced AI and power.
 
+## Resources
+- [Replit Website](https://replit.com/)
+- [Replit Blog](https://blog.replit.com/)
+
 ## Status
 **Ring: TRIAL** - A mature platform that continues to innovate with AI, making it a staple for cloud-based development.

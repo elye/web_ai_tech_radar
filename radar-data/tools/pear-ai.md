@@ -28,5 +28,9 @@ Pear AI is an open-source AI code editor (fork of VS Code) that focuses on clari
 ## Cost
 **Free** - Open source model.
 
+## Resources
+- [Pear AI Website](https://pearai.com/)
+- [Pear AI GitHub](https://github.com/pearai)
+
 ## Status
 **Ring: ASSESS** - A strong option for those who value open source and code quality over raw speed.

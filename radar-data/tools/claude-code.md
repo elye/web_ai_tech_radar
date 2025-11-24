@@ -14,7 +14,7 @@ cost: "paid"
 ## Overview
 Claude Code is an advanced agentic coding assistant from Anthropic that operates directly in the terminal. It leverages Claude's reasoning capabilities to understand codebases, plan changes, and execute complex refactors autonomously.
 
-## Key Features
+## Key Benefits
 - **Terminal-Based:** Runs in your CLI, integrating with your existing tools.
 - **Agentic Workflow:** Can plan, edit files, run tests, and fix bugs autonomously.
 - **Security Reviews:** Automated security scanning and remediation suggestions.
@@ -29,6 +29,10 @@ Claude Code is an advanced agentic coding assistant from Anthropic that operates
 
 ## Cost
 **Paid** - Requires Claude Pro/Team subscription or API usage.
+
+## Resources
+- [Anthropic Blog](https://www.anthropic.com/news)
+- [Claude Code Docs](https://docs.anthropic.com/claude/docs)
 
 ## Status
 **Ring: TRIAL** - A powerful tool for CLI-native developers, offering strong agentic capabilities and security features.

@@ -30,5 +30,9 @@ GPT-5.1-Codex-Max is OpenAI's latest frontier agentic coding model, specifically
 ## Cost
 **Paid** - Available in ChatGPT Plus/Pro/Enterprise and Codex CLI.
 
+## Resources
+- [OpenAI Website](https://openai.com)
+- [ChatGPT Blog](https://openai.com/blog)
+
 ## Status
 **Ring: TRIAL** - A specialized powerhouse for agentic coding, particularly for complex and long-duration tasks.

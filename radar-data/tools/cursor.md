@@ -14,7 +14,7 @@ cost: "paid"
 ## Overview
 Cursor is an AI-first code editor built on VS Code that has transformed into a comprehensive agentic development platform in 2025. With the introduction of its native "Composer" model and "Background Agents", it offers a highly autonomous coding experience.
 
-## Key Features
+## Key Benefits
 - **Composer Model:** Native frontier model trained for coding, 4x faster than competitors.
 - **Background Agents:** Run long-running tasks (refactors, tests) in parallel without blocking.
 - **Max Mode:** Access to top models (o3, Claude 3.5, Gemini 2.5) for complex reasoning.

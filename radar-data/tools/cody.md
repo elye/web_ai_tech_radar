@@ -28,5 +28,9 @@ Cody by Sourcegraph is an AI coding assistant designed for enterprise scale. It 
 ## Cost
 **Freemium** - Free tier available; paid enterprise plans.
 
+## Resources
+- [Sourcegraph Cody](https://sourcegraph.com/cody)
+- [Cody Documentation](https://docs.sourcegraph.com/cody)
+
 ## Status
 **Ring: TRIAL** - The go-to choice for large-scale codebase understanding and enterprise AI assistance.

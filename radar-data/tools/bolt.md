@@ -28,5 +28,9 @@ Bolt by StackBlitz is an AI-powered development environment that runs entirely i
 ## Cost
 **Freemium** - Token-based pricing for AI features.
 
+## Resources
+- [Bolt.new](https://bolt.new/)
+- [StackBlitz](https://stackblitz.com/)
+
 ## Status
 **Ring: TRIAL** - A powerful browser-based IDE that is redefining rapid web development.

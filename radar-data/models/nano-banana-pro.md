@@ -31,5 +31,9 @@ Nano Banana Pro, officially known as **Gemini 3 Pro Image**, is Google DeepMind'
 ## Cost
 **Freemium** - Available in Gemini Advanced and for developers via API.
 
+## Resources
+- [Google DeepMind](https://deepmind.google/)
+- [Gemini Blog](https://blog.google/technology/ai/)
+
 ## Status
 **Ring: TRIAL** - A powerful new entrant in image generation, offering unique reasoning and consistency features.

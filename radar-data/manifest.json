@@ -20,7 +20,8 @@
     "nano-banana.md",
     "o1-preview.md",
     "o1.md",
-    "perplexity-sonar-pro.md"
+    "perplexity-sonar-pro.md",
+    "perplexity.md"
   ],
   "platforms": [
     "anthropic-api.md",

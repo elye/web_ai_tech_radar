@@ -37,6 +37,7 @@
     "vertex-ai.md"
   ],
   "techniques": [
+    "agentic-skill-technique.md",
     "agentic-workflows.md",
     "constitutional-ai.md",
     "fine-tuning-llms.md",
